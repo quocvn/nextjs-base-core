@@ -5,7 +5,7 @@
     "prettier",
     "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": ["@typescript-eslint", "react", "import"],
+  "plugins": ["@typescript-eslint", "react", "import", "prettier"],
   "rules": {
     "no-console": "warn",
     "prefer-regex-literals": "off",
@@ -60,6 +60,16 @@
         "required": {
           "some": ["nesting", "id"]
         }
+      }
+    ],
+    "prettier/prettier": [
+      "warn",
+      {
+        "jsxSingleQuote": true,
+        "singleQuote": true,
+        "semi": false,
+        "tabWidth": 2,
+        "printWidth": 100
       }
     ],
     // eslint-plugin-@next
