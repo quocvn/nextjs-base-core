@@ -1,123 +1,214 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+/* eslint-disable no-console */
+import {
+  LoadingOutlined,
+  MessageOutlined,
+  SmileOutlined,
+  SolutionOutlined,
+  UserOutlined,
+} from '@ant-design/icons'
+import {
+  Button,
+  Typography,
+  Divider,
+  Col,
+  Row,
+  Checkbox,
+  Input,
+  Breadcrumb,
+  Progress,
+  Radio,
+  Rate,
+  Slider,
+  notification,
+  Space,
+  Steps,
+  Switch,
+  Avatar,
+  Badge,
+  Card,
+  Collapse,
+  message,
+  Spin,
+} from 'antd'
+import Link from 'next/link'
 
-const inter = Inter({ subsets: ['latin'] })
+import { useState } from 'react'
+
+const { Title } = Typography
+const { Panel } = Collapse
+const colStyle: React.CSSProperties = {
+  background: '#0092ff',
+  padding: '8px 0',
+  color: 'white',
+  textAlign: 'center',
+}
 
 export default function Home() {
+  const [value, setValue] = useState(1)
+  const [messageApi, contextHolder] = message.useMessage()
+  const plainOptions = ['Apple', 'Pear', 'Orange']
+
+  const onRadioChange = (e: any) => {
+    console.log('radio checked', e.target.value)
+    setValue(e.target.value)
+  }
+
+  const openNotification = () => {
+    notification.open({
+      message: 'Notification Title',
+      description:
+        'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+      onClick: () => {
+        console.log('Notification Clicked!')
+      },
+    })
+  }
+
+  const messageInfo = () => {
+    messageApi.info('Hello, Ant Design!')
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+    <main className='flex min-h-screen'>
+      <div className='z-10 w-full px-24 pt-16 font-mono'>
+        <Title className='text-4xl text-center text-linen'>
+          Next.js (Typescript) + Ant Design + Tailwind CSS + Redux Toolkit
+        </Title>
+        <p className='fixed top-0 left-0 flex justify-center w-full pb-6 border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30'>
           Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
+          <code className='font-mono font-bold'>src/pages/index.tsx</code>
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+        <div className='my-5'>
+          <Space>
+            <Button type='primary' onClick={openNotification}>
+              Primary Button
+            </Button>
+            <Button type='primary' danger onClick={openNotification}>
+              Danger
+            </Button>
+            <Button>Default Button</Button>
+            <Button type='dashed'>Dashed Button</Button>
+            <Button type='primary' shape='round' icon={<MessageOutlined />} onClick={messageInfo}>
+              Show message
+            </Button>
+            <Button type='text'>Text Button</Button>
+            <Button type='link'>Link Button</Button>
+            <Button
+              type='primary'
+              className='font-bold text-white bg-teal-600 border-teal-600 rounded-none '
+            >
+              Ant button with a tailwind css styles
+            </Button>
+          </Space>
         </div>
-      </div>
+        <div className='my-3'>
+          <Radio.Group onChange={onRadioChange} value={value}>
+            <Radio value={1}>A</Radio>
+            <Radio value={2}>B</Radio>
+            <Radio value={3}>C</Radio>
+            <Radio value={4}>D</Radio>
+          </Radio.Group>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          <span className='ms-3'>
+            <Checkbox.Group options={plainOptions} defaultValue={['Apple']} />
+          </span>
+
+          <Switch className='ms-3' defaultChecked />
+          <Spin className='ms-3' />
+        </div>
+        <div className='my-3'>
+          <Rate allowHalf defaultValue={2.5} />
+          <div className='mt-3'>
+            <Space size={16} wrap>
+              <Avatar icon={<UserOutlined />} />
+              <Avatar>U</Avatar>
+              <Avatar size={40}>USER</Avatar>
+              <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>U</Avatar>
+              <Badge count={1}>
+                <Avatar style={{ backgroundColor: '#87d068' }} icon={<UserOutlined />} />
+              </Badge>
+            </Space>
+          </div>
+
+          <Divider orientation='left'>Horizontal</Divider>
+          <Row gutter={16}>
+            <Col className='gutter-row' span={6}>
+              <div style={colStyle}>col-6</div>
+            </Col>
+            <Col className='gutter-row' span={6}>
+              <div style={colStyle}>col-6</div>
+            </Col>
+            <Col className='gutter-row' span={6}>
+              <div style={colStyle}>col-6</div>
+            </Col>
+            <Col className='gutter-row' span={6}>
+              <div style={colStyle}>col-6</div>
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Input placeholder='Basic usage' />
+          <Badge.Ribbon text='Hippies' color='purple'>
+            <Card className='mt-3' title='Pushes open the window' size='small'>
+              and raises the spyglass.
+            </Card>
+          </Badge.Ribbon>
+          <Collapse className='mt-3'>
+            <Panel header='This is default size panel header' key='1'>
+              <p>
+                A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it
+                can be found as a welcome guest in many households across the world.
+              </p>
+            </Panel>
+          </Collapse>
+          <Slider defaultValue={30} />
+        </div>
+        <div>
+          <Breadcrumb>
+            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            <Breadcrumb.Item>
+              <Link href='/'>Application Center</Link>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>
+              <Link href='/'>Application List</Link>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>An Application</Breadcrumb.Item>
+          </Breadcrumb>
+        </div>
+
+        <Steps
+          className='my-3'
+          items={[
+            {
+              title: 'Login',
+              status: 'finish',
+              icon: <UserOutlined />,
+            },
+            {
+              title: 'Verification',
+              status: 'finish',
+              icon: <SolutionOutlined />,
+            },
+            {
+              title: 'Pay',
+              status: 'process',
+              icon: <LoadingOutlined />,
+            },
+            {
+              title: 'Done',
+              status: 'wait',
+              icon: <SmileOutlined />,
+            },
+          ]}
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <div className='my-4'>
+          <Progress percent={30} />
+          <Progress percent={50} status='active' />
+          <Progress percent={70} status='exception' />
+          <Progress percent={100} />
+          <Progress percent={50} showInfo={false} />
+        </div>
+        {contextHolder}
       </div>
     </main>
   )
