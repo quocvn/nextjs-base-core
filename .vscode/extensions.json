@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "streetsidesoftware.code-spell-checker",
+    "EditorConfig.EditorConfig",
+    "bradlc.vscode-tailwindcss"
+    // "heybourn.headwind"
+  ]
+}

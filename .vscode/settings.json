@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "search.exclude": {
+    "package-lock.json": true,
+    "yarn.lock": true
+  },
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": [
+    // "source.addMissingImports",
+    "source.fixAll.eslint"
+  ]
+}

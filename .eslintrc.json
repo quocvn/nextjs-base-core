@@ -1,3 +1,97 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "prettier",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "react", "import", "prettier"],
+  "rules": {
+    "no-console": "warn",
+    "prefer-regex-literals": "off",
+    "camelcase": "off",
+    "no-unused-vars": "off",
+    "func-style": "error",
+    // eslint-plugin-import
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off", // Named export is easier to refactor automatically
+    "import/extensions": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            // "pattern": "{__test__,api,common,components,helpers,hooks,languages,libs,pages,provider,types}/**/*",
+            "group": "internal",
+            "position": "before"
+          }
+        ],
+        // "pathGroupsExcludedImportTypes": ["builtin"],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc"
+          // "caseInsensitive": true
+        }
+      }
+    ],
+    "import/no-unused-modules": [
+      "off", // only set "error" when testing
+      {
+        "unusedExports": true,
+        "ignoreExports": ["src/pages", "src/languages"]
+      }
+    ],
+    // eslint-plugin-react
+    "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", "tsx", ".ts"] }],
+    "react/jsx-props-no-spreading": "off", // _app.tsx uses spread operator and also, react-hook-form
+    "react/require-default-props": "off", // Allow non-defined react props as undefined
+    "react/prop-types": "off",
+    "react/jsx-no-useless-fragment": "off",
+    // eslint-plugin-jsx-a11y
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "prettier/prettier": [
+      "warn",
+      {
+        "jsxSingleQuote": true,
+        "singleQuote": true,
+        "semi": false,
+        "tabWidth": 2,
+        "printWidth": 100
+      }
+    ],
+    // eslint-plugin-@next
+    "@next/next/no-img-element": "off", // We currently not using next/image because it isn't supported with SSG mode
+    // eslint-plugin-@typescript-eslint
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-explicit-any": "off"
+    // "unused-imports/no-unused-imports": "error",
+    // "unused-imports/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+  },
+  "overrides": [
+    // Configuration for TypeScript files
+    {
+      // "files": ["**/*.ts", "**/*.tsx"],
+      "files": ["**/*.test.tsx", "**/*.test.ts"]
+    }
+  ]
 }
