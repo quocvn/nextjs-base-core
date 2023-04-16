@@ -31,7 +31,6 @@ import {
   Spin,
 } from 'antd'
 import Link from 'next/link'
-
 import { useState } from 'react'
 
 const { Title } = Typography
@@ -43,7 +42,7 @@ const colStyle: React.CSSProperties = {
   textAlign: 'center',
 }
 
-export default function Home() {
+const Home = () => {
   const [value, setValue] = useState(1)
   const [messageApi, contextHolder] = message.useMessage()
   const plainOptions = ['Apple', 'Pear', 'Orange']
@@ -213,3 +212,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default Home

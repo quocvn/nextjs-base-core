@@ -1,10 +1,10 @@
 import { Card, Layout, Select } from 'antd'
 
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import { selectName, setPokemonName } from 'redux/slices/pokemon.slice'
 import { useGetPokemonByNameQuery } from 'services/pokemon.service'
 
 import { pokemonNameList } from '../../constants'
-import { selectName, setPokemonName } from '../../redux/slices/pokemon.slice'
 
 const { Meta } = Card
 
