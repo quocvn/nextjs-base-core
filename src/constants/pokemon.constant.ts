@@ -1,6 +1,8 @@
 export const pokemonApiUrl = 'https://pokeapi.co/api/v2/'
+export const pokemonApiUrlLocal = 'http://localhost:9999/api/'
 
 export const pokemonOptions = [
+  { value: 'all', label: 'all' },
   { value: 'venusaur', label: 'venusaur' },
   { value: 'blastoise', label: 'blastoise' },
   { value: 'charizard', label: 'charizard' },
@@ -16,55 +18,49 @@ export const pokemonList = [
   {
     id: 1,
     name: 'venusaur',
-    type: 'grass, poison',
+    types: 'grass, poison',
     image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/3.png',
   },
   {
     id: 2,
     name: 'blastoise',
-    type: 'water',
+    types: 'water',
     image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/9.png',
   },
   {
     id: 3,
     name: 'charizard',
-    type: 'fire, flying',
+    types: 'fire, flying',
     image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/6.png',
   },
   {
     id: 4,
     name: 'pidgeotto',
-    type: 'normal, flying',
+    types: 'normal, flying',
     image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/17.png',
   },
   {
     id: 5,
     name: 'arbok',
-    type: 'poison',
+    types: 'poison',
     image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/24.png',
   },
   {
     id: 6,
     name: 'ninetales',
-    type: 'fire',
+    types: 'fire',
     image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/38.png',
   },
   {
     id: 7,
     name: 'golbat',
-    type: 'poison, flying',
+    types: 'poison, flying',
     image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/42.png',
   },
   {
     id: 8,
     name: 'poliwrath',
-    type: 'water, fighting',
+    types: 'water, fighting',
     image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/62.png',
-  },
-  {
-    id: 9,
-    name: 'exeggutor',
-    type: 'grass, psychic',
-    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/103.png',
   },
 ]

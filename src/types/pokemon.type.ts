@@ -1,6 +1,6 @@
 export type Pokemon = {
   id: number
-  name: any
-  sprites: any
-  types: any
+  name: string
+  image: string
+  types: string
 }
