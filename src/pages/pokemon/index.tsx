@@ -1,10 +1,9 @@
 import { Card, Layout, Select } from 'antd'
 
+import { pokemonOptions } from 'constants/pokemon.constant'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { selectName, setPokemonName } from 'redux/slices/pokemon.slice'
 import { useGetPokemonByNameQuery } from 'services/pokemon.service'
-
-import { pokemonNameList } from '../../constants'
 
 const { Meta } = Card
 
@@ -31,7 +30,7 @@ const About = () => {
         defaultValue='venusaur'
         style={{ width: 120 }}
         onChange={handleChange}
-        options={pokemonNameList}
+        options={pokemonOptions}
       />
 
       <Card
