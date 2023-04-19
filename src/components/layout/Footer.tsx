@@ -8,7 +8,7 @@ const Footer = () => {
         <div className='flex flex-col items-start col-start-1 col-end-4 row-span-2 sm:col-span-4 sm:col-end-5 '>
           <Image
             className='w-auto h-8 mb-6'
-            src='/assets/Logo.svg'
+            src='/assets/images/Logo.svg'
             alt='Logo'
             height={30}
             width={100}
@@ -21,7 +21,7 @@ const Footer = () => {
             <div className='flex items-center justify-center p-2 mx-2 rounded-full shadow-md bg-white-500'>
               <Image
                 className='w-6 h-6'
-                src='/assets/Icon/facebook.svg'
+                src='/assets/icon/template/facebook.svg'
                 alt='facebook'
                 height={30}
                 width={30}
@@ -30,7 +30,7 @@ const Footer = () => {
             <div className='flex items-center justify-center p-2 mx-2 rounded-full shadow-md bg-white-500'>
               <Image
                 className='w-6 h-6'
-                src='/assets/Icon/twitter.svg'
+                src='/assets/icon/template/twitter.svg'
                 alt='twitter'
                 height={30}
                 width={30}
@@ -39,7 +39,7 @@ const Footer = () => {
             <div className='flex items-center justify-center p-2 mx-2 rounded-full shadow-md bg-white-500'>
               <Image
                 className='w-6 h-6'
-                src='/assets/Icon/instagram.svg'
+                src='/assets/icon/template/instagram.svg'
                 alt='instagram'
                 height={30}
                 width={30}

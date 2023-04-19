@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import { Link as LinkScroll } from 'react-scroll'
 
-import ButtonOutline from '../ui/ButtonOutline'
+import ButtonOutline from 'components/ui/ButtonOutline'
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState<string>('')
@@ -26,7 +26,7 @@ const Header = () => {
           <div className='flex items-center col-start-1 col-end-2'>
             <Image
               className='w-auto h-8'
-              src='/assets/Logo.svg'
+              src='/assets/images/Logo.svg'
               alt='Logo'
               height={30}
               width={100}
