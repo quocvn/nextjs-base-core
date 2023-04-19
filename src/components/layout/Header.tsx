@@ -18,21 +18,21 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 w-full  z-30 bg-white-500 transition-all ${
-          scrollActive ? ' shadow-md pt-0' : ' pt-4'
+        className={`fixed top-0 z-30  w-full bg-white-500 transition-all ${
+          scrollActive ? ' pt-0 shadow-md' : ' pt-4'
         }`}
       >
-        <nav className='grid max-w-screen-xl grid-flow-col px-6 py-3 mx-auto sm:px-8 lg:px-16 sm:py-4'>
-          <div className='flex items-center col-start-1 col-end-2'>
+        <nav className='mx-auto grid max-w-screen-xl grid-flow-col px-6 py-3 sm:px-8 sm:py-4 lg:px-16'>
+          <div className='col-start-1 col-end-2 flex items-center'>
             <Image
-              className='w-auto h-8'
+              className='h-8 w-auto'
               src='/assets/images/Logo.svg'
               alt='Logo'
               height={30}
               width={100}
             />
           </div>
-          <ul className='items-center hidden col-start-4 col-end-8 lg:flex text-black-500'>
+          <ul className='col-start-4 col-end-8 hidden items-center text-black-500 lg:flex'>
             <LinkScroll
               activeClass='active'
               to='about'
@@ -42,10 +42,10 @@ const Header = () => {
               onSetActive={() => {
                 setActiveLink('about')
               }}
-              className={`px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative${
+              className={`animation-hover mx-2 inline-block cursor-pointer px-4 py-2 relative${
                 activeLink === 'about'
                   ? ' text-orange-500 animation-active '
-                  : ' text-black-500 hover:text-orange-500 a'
+                  : ' hover:text-orange-500 a text-black-500'
               }`}
             >
               About
@@ -59,10 +59,10 @@ const Header = () => {
               onSetActive={() => {
                 setActiveLink('feature')
               }}
-              className={`px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative${
+              className={`animation-hover mx-2 inline-block cursor-pointer px-4 py-2 relative${
                 activeLink === 'feature'
                   ? ' text-orange-500 animation-active '
-                  : ' text-black-500 hover:text-orange-500 '
+                  : ' hover:text-orange-500 text-black-500 '
               }`}
             >
               Feature
@@ -76,10 +76,10 @@ const Header = () => {
               onSetActive={() => {
                 setActiveLink('pricing')
               }}
-              className={`px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative${
+              className={`animation-hover mx-2 inline-block cursor-pointer px-4 py-2 relative${
                 activeLink === 'pricing'
                   ? ' text-orange-500 animation-active '
-                  : ' text-black-500 hover:text-orange-500 '
+                  : ' hover:text-orange-500 text-black-500 '
               }`}
             >
               Pricing
@@ -93,16 +93,16 @@ const Header = () => {
               onSetActive={() => {
                 setActiveLink('testimoni')
               }}
-              className={`px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative${
+              className={`animation-hover mx-2 inline-block cursor-pointer px-4 py-2 relative${
                 activeLink === 'testimoni'
                   ? ' text-orange-500 animation-active '
-                  : ' text-black-500 hover:text-orange-500 '
+                  : ' hover:text-orange-500 text-black-500 '
               }`}
             >
               Testimonial
             </LinkScroll>
           </ul>
-          <div className='flex items-center justify-end col-start-10 col-end-12 font-medium'>
+          <div className='col-start-10 col-end-12 flex items-center justify-end font-medium'>
             {/* <Link href='/'>
               <a className='mx-2 tracking-wide capitalize transition-all text-black-600 sm:mx-4 hover:text-orange-500'>
                 Sign In
@@ -110,7 +110,7 @@ const Header = () => {
             </Link> */}
             <Link
               href='/'
-              className='mx-2 tracking-wide capitalize transition-all text-black-600 sm:mx-4 hover:text-orange-500'
+              className='hover:text-orange-500 mx-2 capitalize tracking-wide text-black-600 transition-all sm:mx-4'
             >
               Sign In
             </Link>
@@ -120,9 +120,9 @@ const Header = () => {
       </header>
       {/* Mobile Navigation */}
 
-      <nav className='fixed bottom-0 left-0 right-0 z-20 px-4 lg:hidden sm:px-8 shadow-t '>
+      <nav className='fixed bottom-0 left-0 right-0 z-20 px-4 shadow-t sm:px-8 lg:hidden '>
         <div className='bg-white-500 sm:px-3'>
-          <ul className='flex items-center justify-between w-full text-black-500'>
+          <ul className='flex w-full items-center justify-between text-black-500'>
             <LinkScroll
               activeClass='active'
               to='about'
@@ -132,14 +132,14 @@ const Header = () => {
               onSetActive={() => {
                 setActiveLink('about')
               }}
-              className={`mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all ${
+              className={`mx-1 flex flex-col items-center border-t-2 px-3 py-2 text-xs transition-all sm:mx-2 sm:px-4 ${
                 activeLink === 'about'
                   ? '  border-orange-500 text-orange-500'
                   : ' border-transparent'
               }`}
             >
               <svg
-                className='w-6 h-6'
+                className='h-6 w-6'
                 fill='none'
                 stroke='currentColor'
                 viewBox='0 0 24 24'
@@ -163,14 +163,14 @@ const Header = () => {
               onSetActive={() => {
                 setActiveLink('feature')
               }}
-              className={`mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all ${
+              className={`mx-1 flex flex-col items-center border-t-2 px-3 py-2 text-xs transition-all sm:mx-2 sm:px-4 ${
                 activeLink === 'feature'
                   ? '  border-orange-500 text-orange-500'
                   : ' border-transparent '
               }`}
             >
               <svg
-                className='w-6 h-6'
+                className='h-6 w-6'
                 fill='none'
                 stroke='currentColor'
                 viewBox='0 0 24 24'
@@ -194,14 +194,14 @@ const Header = () => {
               onSetActive={() => {
                 setActiveLink('pricing')
               }}
-              className={`mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all ${
+              className={`mx-1 flex flex-col items-center border-t-2 px-3 py-2 text-xs transition-all sm:mx-2 sm:px-4 ${
                 activeLink === 'pricing'
                   ? '  border-orange-500 text-orange-500'
                   : ' border-transparent '
               }`}
             >
               <svg
-                className='w-6 h-6'
+                className='h-6 w-6'
                 fill='none'
                 stroke='currentColor'
                 viewBox='0 0 24 24'
@@ -225,14 +225,14 @@ const Header = () => {
               onSetActive={() => {
                 setActiveLink('testimoni')
               }}
-              className={`mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all ${
+              className={`mx-1 flex flex-col items-center border-t-2 px-3 py-2 text-xs transition-all sm:mx-2 sm:px-4 ${
                 activeLink === 'testimoni'
                   ? '  border-orange-500 text-orange-500'
                   : ' border-transparent '
               }`}
             >
               <svg
-                className='w-6 h-6'
+                className='h-6 w-6'
                 fill='none'
                 stroke='currentColor'
                 viewBox='0 0 24 24'

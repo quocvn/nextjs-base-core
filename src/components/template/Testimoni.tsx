@@ -51,7 +51,7 @@ const Testimoni = ({
     customPaging(_: any) {
       return (
         <Link href='/' className=''>
-          <span className='block w-4 h-4 mx-2 transition-all rounded-l-full rounded-r-full cursor-pointer ' />
+          <span className='mx-2 block h-4 w-4 cursor-pointer rounded-l-full rounded-r-full transition-all ' />
         </Link>
       )
     },
@@ -91,22 +91,22 @@ const Testimoni = ({
       >
         {listTestimoni.map((listTestimonis, index) => (
           <div className='flex items-stretch px-3' key={index}>
-            <div className='flex flex-col p-8 transition-all border-2 border-gray-500 rounded-lg hover:border-orange-500'>
-              <div className='flex flex-col items-stretch w-full xl:flex-row xl:items-center'>
-                <div className='flex order-2 xl:order-1'>
+            <div className='hover:border-orange-500 flex flex-col rounded-lg border-2 border-gray-500 p-8 transition-all'>
+              <div className='flex w-full flex-col items-stretch xl:flex-row xl:items-center'>
+                <div className='order-2 flex xl:order-1'>
                   <Image src={listTestimonis.image} height={50} width={50} alt='Icon People' />
-                  <div className='flex flex-col ml-5 text-left'>
+                  <div className='ml-5 flex flex-col text-left'>
                     <p className='text-lg capitalize text-black-600'>{listTestimonis.name}</p>
                     <p className='text-sm capitalize text-black-500'>
                       {listTestimonis.city},{listTestimonis.country}
                     </p>
                   </div>
                 </div>
-                <div className='flex items-center flex-none order-1 ml-auto xl:order-2'>
+                <div className='order-1 ml-auto flex flex-none items-center xl:order-2'>
                   <p className='text-sm'>{listTestimonis.rating}</p>
-                  <span className='flex ml-4'>
+                  <span className='ml-4 flex'>
                     <Image
-                      className='w-4 h-4'
+                      className='h-4 w-4'
                       src='/assets/icon/template/stars.svg'
                       alt='star'
                       height={30}
@@ -120,14 +120,14 @@ const Testimoni = ({
           </div>
         ))}
       </Slider>
-      <div className='flex items-center justify-end w-full'>
-        <div className='flex justify-between flex-none w-auto mt-14'>
+      <div className='flex w-full items-center justify-end'>
+        <div className='mt-14 flex w-auto flex-none justify-between'>
           <div
-            className='flex items-center justify-center mx-4 text-orange-500 transition-all bg-white border border-orange-500 rounded-full cursor-pointer h-14 w-14 hover:bg-orange-500 hover:text-white-500'
+            className='text-orange-500 bg-white border-orange-500 hover:bg-orange-500 mx-4 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border transition-all hover:text-white-500'
             onClick={sliderRef?.slickPrev}
           >
             <Image
-              className='w-6 h-6'
+              className='h-6 w-6'
               src='/assets/icon/template/eva_arrow-back-fill.svg'
               alt='Back'
               height={30}
@@ -135,11 +135,11 @@ const Testimoni = ({
             />
           </div>
           <div
-            className='flex items-center justify-center text-orange-500 transition-all bg-white border border-orange-500 rounded-full cursor-pointer h-14 w-14 hover:bg-orange-500 hover:text-white-500'
+            className='text-orange-500 bg-white border-orange-500 hover:bg-orange-500 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border transition-all hover:text-white-500'
             onClick={sliderRef?.slickNext}
           >
             <Image
-              className='w-6 h-6'
+              className='h-6 w-6'
               src='/assets/icon/template/eva_arrow-next-fill.svg'
               alt='Next'
               height={30}
