@@ -1,5 +1,5 @@
-// import SeoHead from '../components/SeoHead'
 import Layout from 'components/layout/Layout'
+import SEOHead from 'components/seo'
 import Feature from 'components/template/Feature'
 import Hero from 'components/template/Hero'
 import Pricing from 'components/template/Pricing'
@@ -7,7 +7,7 @@ import Pricing from 'components/template/Pricing'
 const Home = () => {
   return (
     <>
-      {/* <SeoHead title='LaslesVPN Landing Page' /> */}
+      <SEOHead title='My page example' />
       <Layout>
         <Hero />
         <Feature />
