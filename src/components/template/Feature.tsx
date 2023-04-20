@@ -39,14 +39,14 @@ const Feature = () => {
             className='ml-auto flex w-full flex-col items-end justify-center lg:w-9/12'
             variants={scrollAnimation}
           >
-            <h3 className='text-3xl font-medium leading-relaxed text-black-600 lg:text-4xl'>
+            <h3 className='text-3xl font-medium leading-relaxed text-template-black-600 lg:text-4xl'>
               We Provide Many Features You Can Use
             </h3>
-            <p className='my-2 text-black-500'>
+            <p className='my-2 text-template-black-500'>
               You can explore the features that we provide with fun and have their own functions
               each feature.
             </p>
-            <ul className='ml-8 list-inside self-start text-black-500'>
+            <ul className='ml-8 list-inside self-start text-template-black-500'>
               {features.map((feature, index) => (
                 <motion.li
                   className='circle-check custom-list relative'

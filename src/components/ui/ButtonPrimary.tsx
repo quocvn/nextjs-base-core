@@ -10,7 +10,7 @@ const ButtonPrimary = ({
   return (
     <button
       type='button'
-      className={`bg-orange-500 rounded-lg px-12 py-3 font-semibold text-white-500 outline-none transition-all hover:shadow-orange-md lg:px-16 lg:py-4 ${addClass}`}
+      className={`rounded-lg bg-template-orange-500 px-12 py-3 font-semibold text-template-white-500 outline-none transition-all hover:shadow-orange-md lg:px-16 lg:py-4 ${addClass}`}
     >
       {children}
     </button>

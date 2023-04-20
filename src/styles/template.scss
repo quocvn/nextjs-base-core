@@ -3,7 +3,7 @@
   content: '';
   height: 2px;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  @apply absolute bottom-0 block w-0 bg-orange-500 left-1/2;
+  @apply absolute bottom-0 left-1/2 block w-0 bg-template-orange-500;
 }
 
 .animation-active:after {
@@ -47,9 +47,9 @@ li.check:before {
 }
 
 .slick-dots span {
-  @apply bg-gray-500;
+  @apply bg-template-gray-500;
 }
 
 .slick-dots .slick-active span {
-  @apply w-12 bg-orange-500 rounded-l-full rounded-r-full;
+  @apply w-12 rounded-l-full rounded-r-full bg-template-orange-500;
 }

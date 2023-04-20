@@ -14,13 +14,16 @@ const Pricing = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
 
   return (
-    <div className='w-full bg-gradient-to-b from-white-300 to-white-500 py-14' id='pricing'>
+    <div
+      className='w-full bg-gradient-to-b from-template-white-300 to-template-white-500 py-14'
+      id='pricing'
+    >
       <div className='mx-auto flex w-full max-w-screen-xl flex-col justify-center px-6 text-center sm:px-8 lg:px-16'>
         <div className='flex w-full flex-col'>
           <ScrollAnimationWrapper>
             <motion.h3
               variants={scrollAnimation}
-              className='text-2xl font-medium leading-relaxed text-black-600 sm:text-3xl lg:text-4xl'
+              className='text-2xl font-medium leading-relaxed text-template-black-600 sm:text-3xl lg:text-4xl'
             >
               Choose Your Plan
             </motion.h3>
@@ -35,7 +38,7 @@ const Pricing = () => {
             <ScrollAnimationWrapper className='flex justify-center'>
               <motion.div
                 variants={scrollAnimation}
-                className='flex flex-col items-center justify-center rounded-xl border-2 border-gray-500 px-6 py-4 lg:px-12 xl:px-20'
+                className='flex flex-col items-center justify-center rounded-xl border-2 border-template-gray-500 px-6 py-4 lg:px-12 xl:px-20'
                 whileHover={{
                   scale: 1.1,
                   transition: {
@@ -46,17 +49,17 @@ const Pricing = () => {
                 <div className='mt-6 p-4 lg:mt-16 lg:p-0'>
                   <Image src='/assets/images/Free.png' width={145} height={165} alt='Free Plan' />
                 </div>
-                <p className='my-2 text-lg font-medium capitalize text-black-600 sm:my-7'>
+                <p className='my-2 text-lg font-medium capitalize text-template-black-600 sm:my-7'>
                   Free Plan
                 </p>
-                <ul className='flex flex-grow list-inside flex-col items-start justify-start pl-6 text-left text-black-500 xl:pl-0'>
+                <ul className='flex flex-grow list-inside flex-col items-start justify-start pl-6 text-left text-template-black-500 xl:pl-0'>
                   <li className='check custom-list relative my-2'>Unlimited Bandwitch</li>
                   <li className='check custom-list relative my-2'>Encrypted Connection</li>
                   <li className='check custom-list relative my-2'>No Traffic Logs</li>
                   <li className='check custom-list relative my-2'>Works on All Devices</li>
                 </ul>
                 <div className='mb-8 mt-12 flex w-full flex-none flex-col justify-center'>
-                  <p className='mb-4 text-center text-2xl text-black-600 '>Free</p>
+                  <p className='mb-4 text-center text-2xl text-template-black-600 '>Free</p>
                   <ButtonOutline>Select</ButtonOutline>
                 </div>
               </motion.div>
@@ -64,7 +67,7 @@ const Pricing = () => {
             <ScrollAnimationWrapper className='flex justify-center'>
               <motion.div
                 variants={scrollAnimation}
-                className='flex flex-col items-center justify-center rounded-xl border-2 border-gray-500 px-6 py-4 lg:px-12 xl:px-20'
+                className='flex flex-col items-center justify-center rounded-xl border-2 border-template-gray-500 px-6 py-4 lg:px-12 xl:px-20'
                 whileHover={{
                   scale: 1.1,
                   transition: {
@@ -80,10 +83,10 @@ const Pricing = () => {
                     alt='Standard Plan'
                   />
                 </div>
-                <p className='my-2 text-lg font-medium capitalize text-black-600 sm:my-7'>
+                <p className='my-2 text-lg font-medium capitalize text-template-black-600 sm:my-7'>
                   Standard Plan{' '}
                 </p>
-                <ul className='flex flex-grow list-inside flex-col items-start justify-start pl-6 text-left text-black-500 xl:pl-0'>
+                <ul className='flex flex-grow list-inside flex-col items-start justify-start pl-6 text-left text-template-black-500 xl:pl-0'>
                   <li className='check custom-list relative my-2'>Unlimited Bandwitch</li>
                   <li className='check custom-list relative my-2'>Encrypted Connection</li>
                   <li className='check custom-list relative my-2'>No Traffic Logs</li>
@@ -91,8 +94,8 @@ const Pricing = () => {
                   <li className='check custom-list relative my-2'>Connect Anyware </li>
                 </ul>
                 <div className='mb-8 mt-12 flex w-full flex-none flex-col justify-center'>
-                  <p className='mb-4 text-center text-2xl text-black-600 '>
-                    $9 <span className='text-black-500'>/ mo</span>
+                  <p className='mb-4 text-center text-2xl text-template-black-600 '>
+                    $9 <span className='text-template-black-500'>/ mo</span>
                   </p>
                   <ButtonOutline>Select</ButtonOutline>
                 </div>
@@ -101,7 +104,7 @@ const Pricing = () => {
             <ScrollAnimationWrapper className='flex justify-center'>
               <motion.div
                 variants={scrollAnimation}
-                className='flex flex-col items-center justify-center rounded-xl border-2 border-gray-500 px-6 py-4 lg:px-12 xl:px-20'
+                className='flex flex-col items-center justify-center rounded-xl border-2 border-template-gray-500 px-6 py-4 lg:px-12 xl:px-20'
                 whileHover={{
                   scale: 1.1,
                   transition: {
@@ -117,10 +120,10 @@ const Pricing = () => {
                     alt='Premium Plan'
                   />
                 </div>
-                <p className='my-2 text-lg font-medium capitalize text-black-600 sm:my-7'>
+                <p className='my-2 text-lg font-medium capitalize text-template-black-600 sm:my-7'>
                   Premium Plan{' '}
                 </p>
-                <ul className='flex flex-grow list-inside flex-col items-start justify-start pl-6 text-left text-black-500 xl:pl-0'>
+                <ul className='flex flex-grow list-inside flex-col items-start justify-start pl-6 text-left text-template-black-500 xl:pl-0'>
                   <li className='check custom-list relative my-2'>Unlimited Bandwitch</li>
                   <li className='check custom-list relative my-2'>Encrypted Connection</li>
                   <li className='check custom-list relative my-2'>No Traffic Logs</li>
@@ -129,8 +132,8 @@ const Pricing = () => {
                   <li className='check custom-list relative my-2'>Get New Features </li>
                 </ul>
                 <div className='mb-8 mt-12 flex w-full flex-none flex-col justify-center'>
-                  <p className='mb-4 text-center text-2xl text-black-600 '>
-                    $12 <span className='text-black-500'>/ mo</span>
+                  <p className='mb-4 text-center text-2xl text-template-black-600 '>
+                    $12 <span className='text-template-black-500'>/ mo</span>
                   </p>
 
                   <ButtonOutline>Select</ButtonOutline>
@@ -143,7 +146,7 @@ const Pricing = () => {
           <ScrollAnimationWrapper>
             <motion.h3
               variants={scrollAnimation}
-              className='mx-auto w-9/12 text-2xl font-medium leading-relaxed text-black-600 sm:w-6/12 sm:text-3xl lg:w-4/12 lg:text-4xl'
+              className='mx-auto w-9/12 text-2xl font-medium leading-relaxed text-template-black-600 sm:w-6/12 sm:text-3xl lg:w-4/12 lg:text-4xl'
             >
               Huge Global Network of Fast VPN{' '}
             </motion.h3>
@@ -203,7 +206,7 @@ const Pricing = () => {
           <ScrollAnimationWrapper>
             <motion.h3
               variants={scrollAnimation}
-              className='sm: mx-auto w-9/12 text-2xl font-medium leading-normal text-black-600 sm:text-3xl lg:w-4/12 lg:text-4xl'
+              className='sm: mx-auto w-9/12 text-2xl font-medium leading-normal text-template-black-600 sm:text-3xl lg:w-4/12 lg:text-4xl'
             >
               Trusted by Thousands of Happy Customer{' '}
             </motion.h3>
@@ -222,9 +225,9 @@ const Pricing = () => {
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper className='relative mt-16 w-full'>
             <motion.div variants={scrollAnimation} custom={{ duration: 3 }}>
-              <div className='absolute z-10 flex w-full flex-col items-center justify-between rounded-xl bg-white-500 px-6 py-8 sm:flex-row sm:px-12 sm:py-14 lg:px-16'>
+              <div className='absolute z-10 flex w-full flex-col items-center justify-between rounded-xl bg-template-white-500 px-6 py-8 sm:flex-row sm:px-12 sm:py-14 lg:px-16'>
                 <div className='mb-6 flex w-10/12 flex-col text-left sm:mb-0 sm:w-7/12 lg:w-5/12'>
-                  <h5 className='text-xl font-medium leading-relaxed text-black-600 sm:text-2xl lg:text-3xl'>
+                  <h5 className='text-xl font-medium leading-relaxed text-template-black-600 sm:text-2xl lg:text-3xl'>
                     Subscribe Now for <br /> Get Special Features!
                   </h5>
                   <p>Let subscribe with us and find the fun.</p>
@@ -232,7 +235,7 @@ const Pricing = () => {
                 <ButtonPrimary>Get Started</ButtonPrimary>
               </div>
               <div
-                className='roudned-lg absolute left-0 right-0 top-0 mx-auto mt-8 h-60 w-11/12 bg-black-600 opacity-5 sm:h-56'
+                className='roudned-lg absolute left-0 right-0 top-0 mx-auto mt-8 h-60 w-11/12 bg-template-black-600 opacity-5 sm:h-56'
                 style={{ filter: 'blur(114px)' }}
               />
             </motion.div>

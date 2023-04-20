@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 z-30 w-full bg-white-500 transition-all ${
+        className={`fixed top-0 z-30 w-full bg-template-white-500 transition-all ${
           scrollActive ? ' pt-0 shadow-md' : ' pt-4'
         }`}
       >
@@ -32,7 +32,7 @@ const Header = () => {
               width={100}
             />
           </div>
-          <ul className='col-start-4 col-end-8 hidden items-center text-black-500 lg:flex'>
+          <ul className='col-start-4 col-end-8 hidden items-center text-template-black-500 lg:flex'>
             <LinkScroll
               activeClass='active'
               to='about'
@@ -44,8 +44,8 @@ const Header = () => {
               }}
               className={`animation-hover mx-2 inline-block cursor-pointer px-4 py-2 relative${
                 activeLink === 'about'
-                  ? ' text-orange-500 animation-active '
-                  : ' hover:text-orange-500 a text-black-500'
+                  ? ' animation-active text-template-orange-500 '
+                  : ' a text-template-black-500 hover:text-template-orange-500'
               }`}
             >
               About
@@ -61,8 +61,8 @@ const Header = () => {
               }}
               className={`animation-hover mx-2 inline-block cursor-pointer px-4 py-2 relative${
                 activeLink === 'feature'
-                  ? ' text-orange-500 animation-active '
-                  : ' hover:text-orange-500 text-black-500 '
+                  ? ' animation-active text-template-orange-500 '
+                  : ' text-template-black-500 hover:text-template-orange-500 '
               }`}
             >
               Feature
@@ -78,8 +78,8 @@ const Header = () => {
               }}
               className={`animation-hover mx-2 inline-block cursor-pointer px-4 py-2 relative${
                 activeLink === 'pricing'
-                  ? ' text-orange-500 animation-active '
-                  : ' hover:text-orange-500 text-black-500 '
+                  ? ' animation-active text-template-orange-500 '
+                  : ' text-template-black-500 hover:text-template-orange-500 '
               }`}
             >
               Pricing
@@ -95,8 +95,8 @@ const Header = () => {
               }}
               className={`animation-hover mx-2 inline-block cursor-pointer px-4 py-2 relative${
                 activeLink === 'testimoni'
-                  ? ' text-orange-500 animation-active '
-                  : ' hover:text-orange-500 text-black-500 '
+                  ? ' animation-active text-template-orange-500 '
+                  : ' text-template-black-500 hover:text-template-orange-500 '
               }`}
             >
               Testimonial
@@ -104,13 +104,13 @@ const Header = () => {
           </ul>
           <div className='col-start-10 col-end-12 flex items-center justify-end font-medium'>
             {/* <Link href='/'>
-              <a className='mx-2 tracking-wide capitalize transition-all text-black-600 sm:mx-4 hover:text-orange-500'>
+              <a className='mx-2 tracking-wide capitalize transition-all text-template-black-600 sm:mx-4 hover:text-template-orange-500'>
                 Sign In
               </a>
             </Link> */}
             <Link
               href='/'
-              className='hover:text-orange-500 mx-2 capitalize tracking-wide text-black-600 transition-all sm:mx-4'
+              className='mx-2 capitalize tracking-wide text-template-black-600 transition-all hover:text-template-orange-500 sm:mx-4'
             >
               Sign In
             </Link>
@@ -121,8 +121,8 @@ const Header = () => {
       {/* Mobile Navigation */}
 
       <nav className='fixed bottom-0 left-0 right-0 z-20 px-4 shadow-t sm:px-8 lg:hidden '>
-        <div className='bg-white-500 sm:px-3'>
-          <ul className='flex w-full items-center justify-between text-black-500'>
+        <div className='bg-template-white-500 sm:px-3'>
+          <ul className='flex w-full items-center justify-between text-template-black-500'>
             <LinkScroll
               activeClass='active'
               to='about'
@@ -134,7 +134,7 @@ const Header = () => {
               }}
               className={`mx-1 flex flex-col items-center border-t-2 px-3 py-2 text-xs transition-all sm:mx-2 sm:px-4 ${
                 activeLink === 'about'
-                  ? '  border-orange-500 text-orange-500'
+                  ? '  border-template-orange-500 text-template-orange-500'
                   : ' border-transparent'
               }`}
             >
@@ -165,7 +165,7 @@ const Header = () => {
               }}
               className={`mx-1 flex flex-col items-center border-t-2 px-3 py-2 text-xs transition-all sm:mx-2 sm:px-4 ${
                 activeLink === 'feature'
-                  ? '  border-orange-500 text-orange-500'
+                  ? '  border-template-orange-500 text-template-orange-500'
                   : ' border-transparent '
               }`}
             >
@@ -196,7 +196,7 @@ const Header = () => {
               }}
               className={`mx-1 flex flex-col items-center border-t-2 px-3 py-2 text-xs transition-all sm:mx-2 sm:px-4 ${
                 activeLink === 'pricing'
-                  ? '  border-orange-500 text-orange-500'
+                  ? '  border-template-orange-500 text-template-orange-500'
                   : ' border-transparent '
               }`}
             >
@@ -227,7 +227,7 @@ const Header = () => {
               }}
               className={`mx-1 flex flex-col items-center border-t-2 px-3 py-2 text-xs transition-all sm:mx-2 sm:px-4 ${
                 activeLink === 'testimoni'
-                  ? '  border-orange-500 text-orange-500'
+                  ? '  border-template-orange-500 text-template-orange-500'
                   : ' border-transparent '
               }`}
             >

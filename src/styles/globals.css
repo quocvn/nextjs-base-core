@@ -31,9 +31,9 @@ html {
 }
 
 body {
-  @apply bg-white-500;
+  /* @apply bg-template-white-500; */
 }
 
 p {
-  @apply text-black-500;
+  /* @apply text-template-black-500; */
 }

@@ -91,13 +91,15 @@ const Testimoni = ({
       >
         {listTestimoni.map((listTestimonis, index) => (
           <div className='flex items-stretch px-3' key={index}>
-            <div className='hover:border-orange-500 flex flex-col rounded-lg border-2 border-gray-500 p-8 transition-all'>
+            <div className='flex flex-col rounded-lg border-2 border-template-gray-500 p-8 transition-all hover:border-template-orange-500'>
               <div className='flex w-full flex-col items-stretch xl:flex-row xl:items-center'>
                 <div className='order-2 flex xl:order-1'>
                   <Image src={listTestimonis.image} height={50} width={50} alt='Icon People' />
                   <div className='ml-5 flex flex-col text-left'>
-                    <p className='text-lg capitalize text-black-600'>{listTestimonis.name}</p>
-                    <p className='text-sm capitalize text-black-500'>
+                    <p className='text-lg capitalize text-template-black-600'>
+                      {listTestimonis.name}
+                    </p>
+                    <p className='text-sm capitalize text-template-black-500'>
                       {listTestimonis.city},{listTestimonis.country}
                     </p>
                   </div>
@@ -123,7 +125,7 @@ const Testimoni = ({
       <div className='flex w-full items-center justify-end'>
         <div className='mt-14 flex w-auto flex-none justify-between'>
           <div
-            className='text-orange-500 bg-white border-orange-500 hover:bg-orange-500 mx-4 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border transition-all hover:text-white-500'
+            className='bg-template-white mx-4 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-template-orange-500 text-template-orange-500 transition-all hover:bg-template-orange-500 hover:text-template-white-500'
             onClick={sliderRef?.slickPrev}
           >
             <Image
@@ -135,7 +137,7 @@ const Testimoni = ({
             />
           </div>
           <div
-            className='text-orange-500 bg-white border-orange-500 hover:bg-orange-500 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border transition-all hover:text-white-500'
+            className='bg-template-white flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-template-orange-500 text-template-orange-500 transition-all hover:bg-template-orange-500 hover:text-template-white-500'
             onClick={sliderRef?.slickNext}
           >
             <Image
