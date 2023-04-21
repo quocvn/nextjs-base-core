@@ -1,5 +1,5 @@
 export const pokemonApiUrl = 'https://pokeapi.co/api/v2/'
-export const pokemonApiUrlLocal = 'http://localhost:9999/api/'
+export const pokemonApiUrlLocal = 'http://localhost:1234/'
 
 export const pokemonOptions = [
   { value: 'all', label: 'all' },
