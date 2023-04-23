@@ -1,14 +1,22 @@
 import { StyleProvider } from '@ant-design/cssinjs'
 import { ConfigProvider } from 'antd'
 import type { AppProps } from 'next/app'
-import 'styles/globals.css'
+import { Provider } from 'react-redux'
 
-export default function App({ Component, pageProps }: AppProps) {
+import { store } from 'redux/store'
+import 'styles/globals.css'
+import 'styles/template.scss'
+
+const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <ConfigProvider>
-      <StyleProvider hashPriority='high'>
-        <Component {...pageProps} />
-      </StyleProvider>
-    </ConfigProvider>
+    <Provider store={store}>
+      <ConfigProvider>
+        <StyleProvider hashPriority='high'>
+          <Component {...pageProps} />
+        </StyleProvider>
+      </ConfigProvider>
+    </Provider>
   )
 }
+
+export default App

@@ -8,10 +8,12 @@
   "plugins": ["@typescript-eslint", "react", "import", "prettier"],
   "rules": {
     "no-console": "warn",
+    "no-alert": "warn",
+    "no-unused-vars": "off",
     "prefer-regex-literals": "off",
     "camelcase": "off",
-    "no-unused-vars": "off",
     "func-style": "error",
+    "arrow-body-style": "off",
     // eslint-plugin-import
     "import/no-unresolved": "off",
     "import/no-extraneous-dependencies": "off",
@@ -20,17 +22,15 @@
     "import/order": [
       "error",
       {
-        "groups": ["builtin", "external", "internal"],
+        "groups": ["builtin", "external", "internal", ["parent", "sibling", "index"], "object"],
         "pathGroups": [
           {
-            "pattern": "react",
-            // "pattern": "{__test__,api,common,components,helpers,hooks,languages,libs,pages,provider,types}/**/*",
+            "pattern": "{commons,components,constants,helpers,hooks,languages,libs,pages,redux,services,types}/**/*",
             "group": "internal",
             "position": "before"
           }
         ],
-        // "pathGroupsExcludedImportTypes": ["builtin"],
-        "pathGroupsExcludedImportTypes": ["react"],
+        "pathGroupsExcludedImportTypes": ["builtin"],
         "newlines-between": "always",
         "alphabetize": {
           "order": "asc"
@@ -53,6 +53,14 @@
     "react/require-default-props": "off", // Allow non-defined react props as undefined
     "react/prop-types": "off",
     "react/jsx-no-useless-fragment": "off",
+    "react/no-array-index-key": "off",
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
     // eslint-plugin-jsx-a11y
     "jsx-a11y/label-has-associated-control": [
       "error",
@@ -84,14 +92,15 @@
     ],
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-explicit-any": "off"
-    // "unused-imports/no-unused-imports": "error",
-    // "unused-imports/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
   },
   "overrides": [
     // Configuration for TypeScript files
     {
-      // "files": ["**/*.ts", "**/*.tsx"],
       "files": ["**/*.test.tsx", "**/*.test.ts"]
+    },
+    {
+      "files": ["src/redux/slices/*.slice.ts"],
+      "rules": { "no-param-reassign": ["error", { "props": false }] }
     }
   ]
 }
