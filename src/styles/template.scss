@@ -42,6 +42,10 @@ li.check:before {
   font-size: 400%;
 }
 /* Slideshow */
+.slick-dots {
+  @apply absolute -bottom-14 mt-20 w-max;
+}
+
 .slick-dots li {
   @apply inline-block;
 }

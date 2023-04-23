@@ -22,7 +22,7 @@ const Header = () => {
           scrollActive ? ' pt-0 shadow-md' : ' pt-4'
         }`}
       >
-        <nav className='mx-auto grid max-w-screen-xl grid-flow-col px-6 py-3 sm:px-8 sm:py-4 lg:px-16'>
+        <nav className='container mx-auto grid grid-flow-col px-8 py-3 sm:py-4 xl:px-16'>
           <div className='col-start-1 col-end-2 flex items-center'>
             <Image
               className='h-8 w-auto'

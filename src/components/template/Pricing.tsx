@@ -18,7 +18,7 @@ const Pricing = () => {
       className='w-full bg-gradient-to-b from-template-white-300 to-template-white-500 py-14'
       id='pricing'
     >
-      <div className='mx-auto flex w-full max-w-screen-xl flex-col justify-center px-6 text-center sm:px-8 lg:px-16'>
+      <div className='container mx-auto flex w-full flex-col justify-center px-8 text-center xl:px-16'>
         <div className='flex w-full flex-col'>
           <ScrollAnimationWrapper>
             <motion.h3

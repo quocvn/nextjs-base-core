@@ -4,7 +4,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <div className='bg-template-white-300 pb-24 pt-44'>
-      <div className='mx-auto grid w-full max-w-screen-xl grid-flow-row grid-cols-3 grid-rows-6 gap-4 px-6 sm:grid-flow-col sm:grid-cols-12 sm:grid-rows-1 sm:px-8 lg:px-16'>
+      <div className='container mx-auto grid w-full grid-flow-row grid-cols-3 grid-rows-6 gap-4 px-8 sm:grid-flow-col sm:grid-cols-12 sm:grid-rows-1 xl:px-16'>
         <div className='col-start-1 col-end-4 row-span-2 flex flex-col items-start sm:col-span-4 sm:col-end-5 '>
           <Image
             className='mb-6 h-8 w-auto'

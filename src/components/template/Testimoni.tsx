@@ -1,19 +1,18 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
+import { Carousel } from 'antd'
+import { CarouselRef } from 'antd/es/carousel'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
-import Slider from 'react-slick'
+import { useRef } from 'react'
 
-const Testimoni = ({
-  listTestimoni = [
+const Preview = ({
+  listPreview = [
     {
       name: 'iezh Robert',
       image: '/assets/images/people.png',
       city: 'Warsaw',
       country: 'Poland',
       rating: '4.5',
-      testimoni:
+      content:
         'Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best',
     },
     {
@@ -22,7 +21,7 @@ const Testimoni = ({
       city: 'Warsaw',
       country: 'Poland',
       rating: '4.5',
-      testimoni:
+      content:
         'Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best',
     },
     {
@@ -31,7 +30,7 @@ const Testimoni = ({
       city: 'Warsaw',
       country: 'Poland',
       rating: '4.5',
-      testimoni:
+      content:
         'Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best',
     },
     {
@@ -40,13 +39,13 @@ const Testimoni = ({
       city: 'Warsaw',
       country: 'Poland',
       rating: '4.5',
-      testimoni:
+      content:
         'Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best',
     },
   ],
 }) => {
+  const sliderRef = useRef<CarouselRef>(null)
   const settings = {
-    dots: true,
     // eslint-disable-next-line react/no-unstable-nested-components
     customPaging(_: any) {
       return (
@@ -78,34 +77,31 @@ const Testimoni = ({
       },
     ],
   }
-  const [sliderRef, setSliderRef] = useState<any>(null)
 
   return (
     <>
-      <Slider
+      <Carousel
         {...settings}
         arrows={false}
         dots={false}
-        ref={setSliderRef}
+        ref={sliderRef}
         className='flex items-stretch justify-items-stretch'
       >
-        {listTestimoni.map((listTestimonis, index) => (
+        {listPreview.map((previewItem, index) => (
           <div className='flex items-stretch px-3' key={index}>
             <div className='flex flex-col rounded-lg border-2 border-template-gray-500 p-8 transition-all hover:border-template-orange-500'>
               <div className='flex w-full flex-col items-stretch xl:flex-row xl:items-center'>
                 <div className='order-2 flex xl:order-1'>
-                  <Image src={listTestimonis.image} height={50} width={50} alt='Icon People' />
+                  <Image src={previewItem.image} height={50} width={50} alt='Icon People' />
                   <div className='ml-5 flex flex-col text-left'>
-                    <p className='text-lg capitalize text-template-black-600'>
-                      {listTestimonis.name}
-                    </p>
+                    <p className='text-lg capitalize text-template-black-600'>{previewItem.name}</p>
                     <p className='text-sm capitalize text-template-black-500'>
-                      {listTestimonis.city},{listTestimonis.country}
+                      {previewItem.city},{previewItem.country}
                     </p>
                   </div>
                 </div>
                 <div className='order-1 ml-auto flex flex-none items-center xl:order-2'>
-                  <p className='text-sm'>{listTestimonis.rating}</p>
+                  <p className='text-sm'>{previewItem.rating}</p>
                   <span className='ml-4 flex'>
                     <Image
                       className='h-4 w-4'
@@ -117,16 +113,17 @@ const Testimoni = ({
                   </span>
                 </div>
               </div>
-              <p className='mt-5 text-left'>“{listTestimonis.testimoni}”.</p>
+              <p className='mt-5 text-left'>{previewItem.content}.</p>
             </div>
           </div>
         ))}
-      </Slider>
+      </Carousel>
       <div className='flex w-full items-center justify-end'>
         <div className='mt-14 flex w-auto flex-none justify-between'>
-          <div
+          <button
+            type='button'
             className='bg-template-white mx-4 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-template-orange-500 text-template-orange-500 transition-all hover:bg-template-orange-500 hover:text-template-white-500'
-            onClick={sliderRef?.slickPrev}
+            onClick={() => sliderRef.current?.prev()}
           >
             <Image
               className='h-6 w-6'
@@ -135,10 +132,11 @@ const Testimoni = ({
               height={30}
               width={30}
             />
-          </div>
-          <div
+          </button>
+          <button
+            type='button'
             className='bg-template-white flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-template-orange-500 text-template-orange-500 transition-all hover:bg-template-orange-500 hover:text-template-white-500'
-            onClick={sliderRef?.slickNext}
+            onClick={() => sliderRef.current?.next()}
           >
             <Image
               className='h-6 w-6'
@@ -147,11 +145,11 @@ const Testimoni = ({
               height={30}
               width={30}
             />
-          </div>
+          </button>
         </div>
       </div>
     </>
   )
 }
 
-export default Testimoni
+export default Preview
