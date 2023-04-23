@@ -13,10 +13,10 @@ export const pokemonApi = createApi({
   endpoints: (builder) => ({
     /*
      * Pokemon: Generic type response tra ve tu api
-     * string: Type tham so truyen vao => trong truong hop nay truyen vao type string la name cua pokemon
+     * string: Type tham so truyen vao => trong truong hop nay truyen vao type string la id cua pokemon
      */
-    getPokemonByName: builder.query<Pokemon, string>({
-      query: (name) => `pokemon/${name}`,
+    getPokemonById: builder.query<Pokemon, string>({
+      query: (id) => `pokemons/${id}`,
     }),
     getPokemonList: builder.query<Pokemon[], void>({
       query: () => 'pokemons',
@@ -89,7 +89,7 @@ export const pokemonApi = createApi({
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
 export const {
-  useGetPokemonByNameQuery,
+  useGetPokemonByIdQuery,
   useGetPokemonListQuery,
   useAddPokemonMutation,
   useUpdatePokemonMutation,
