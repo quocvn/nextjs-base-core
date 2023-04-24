@@ -5,7 +5,6 @@ import React, { useMemo } from 'react'
 import ScrollAnimationWrapper from 'components/layout/ScrollAnimationWrapper'
 import ButtonOutline from 'components/ui/ButtonOutline'
 import ButtonPrimary from 'components/ui/ButtonPrimary'
-
 import { getScrollAnimation } from 'utils/getScrollAnimation'
 
 import Testimoni from './Testimoni'

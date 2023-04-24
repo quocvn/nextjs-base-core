@@ -4,7 +4,6 @@ import React, { useMemo } from 'react'
 
 import ScrollAnimationWrapper from 'components/layout/ScrollAnimationWrapper'
 import ButtonPrimary from 'components/ui/ButtonPrimary'
-
 import { getScrollAnimation } from 'utils/getScrollAnimation'
 
 const Hero = ({

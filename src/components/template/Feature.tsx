@@ -3,7 +3,6 @@ import Image from 'next/legacy/image'
 import React, { useMemo } from 'react'
 
 import ScrollAnimationWrapper from 'components/layout/ScrollAnimationWrapper'
-
 import { getScrollAnimation } from 'utils/getScrollAnimation'
 
 const features = [
