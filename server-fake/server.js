@@ -19,7 +19,7 @@ server.use(jsonServer.bodyParser)
 // eslint-disable-next-line consistent-return
 server.use((req, res, next) => {
   if (['POST', 'PUT', 'PATCH'].includes(req.method)) {
-    if (req.body.name === '') {
+    if (req.body.name.trim() === '') {
       return res.status(422).send({
         error: {
           name: 'Name is required!',
