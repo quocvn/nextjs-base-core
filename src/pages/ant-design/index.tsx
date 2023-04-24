@@ -68,16 +68,12 @@ const AntExample = () => {
   }
 
   return (
-    <div className='z-10 mx-auto max-w-screen-xl px-24 pt-16 font-mono'>
-      <Title className='text-linen text-center text-4xl'>
+    <div className='container mx-auto px-8 font-mono xl:px-16'>
+      <Title className='py-14 text-center text-4xl'>
         Next.js (Typescript) + Ant Design + Tailwind CSS + Redux Toolkit
       </Title>
-      <p className='fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30'>
-        Get started by editing&nbsp;
-        <code className='font-mono font-bold'>src/pages/index.tsx</code>
-      </p>
       <div className='my-5'>
-        <Space>
+        <Space wrap>
           <Button type='primary' onClick={openNotification}>
             Primary Button
           </Button>
