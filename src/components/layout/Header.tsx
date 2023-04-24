@@ -86,20 +86,20 @@ const Header = () => {
             </LinkScroll>
             <LinkScroll
               activeClass='active'
-              to='testimoni'
+              to='preview'
               spy
               smooth
               duration={1000}
               onSetActive={() => {
-                setActiveLink('testimoni')
+                setActiveLink('preview')
               }}
               className={`animation-hover mx-2 inline-block cursor-pointer px-4 py-2 relative${
-                activeLink === 'testimoni'
+                activeLink === 'preview'
                   ? ' animation-active text-template-orange-500 '
                   : ' text-template-black-500 hover:text-template-orange-500 '
               }`}
             >
-              Testimonial
+              Preview
             </LinkScroll>
           </ul>
           <div className='col-start-10 col-end-12 flex items-center justify-end font-medium'>
@@ -218,15 +218,15 @@ const Header = () => {
             </LinkScroll>
             <LinkScroll
               activeClass='active'
-              to='testimoni'
+              to='preview'
               spy
               smooth
               duration={1000}
               onSetActive={() => {
-                setActiveLink('testimoni')
+                setActiveLink('preview')
               }}
               className={`mx-1 flex flex-col items-center border-t-2 px-3 py-2 text-xs transition-all sm:mx-2 sm:px-4 ${
-                activeLink === 'testimoni'
+                activeLink === 'preview'
                   ? '  border-template-orange-500 text-template-orange-500'
                   : ' border-transparent '
               }`}
@@ -245,7 +245,7 @@ const Header = () => {
                   d='M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z'
                 />
               </svg>
-              Testimonial
+              Preview
             </LinkScroll>
           </ul>
         </div>

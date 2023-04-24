@@ -25,7 +25,7 @@
         "groups": ["builtin", "external", "internal", ["parent", "sibling", "index"], "object"],
         "pathGroups": [
           {
-            "pattern": "{commons,components,constants,helpers,hooks,languages,libs,pages,redux,services,types}/**/*",
+            "pattern": "{commons,components,constants,helpers,hooks,languages,libs,pages,redux,services,types,utils}/**/*",
             "group": "internal",
             "position": "before"
           }

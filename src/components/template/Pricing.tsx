@@ -5,10 +5,9 @@ import React, { useMemo } from 'react'
 import ScrollAnimationWrapper from 'components/layout/ScrollAnimationWrapper'
 import ButtonOutline from 'components/ui/ButtonOutline'
 import ButtonPrimary from 'components/ui/ButtonPrimary'
-
 import { getScrollAnimation } from 'utils/getScrollAnimation'
 
-import Testimoni from './Testimoni'
+import Preview from './Preview'
 
 const Pricing = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
@@ -202,7 +201,7 @@ const Pricing = () => {
             </motion.div>
           </ScrollAnimationWrapper>
         </div>
-        <div className='my-16 flex w-full flex-col' id='testimoni'>
+        <div className='my-16 flex w-full flex-col' id='preview'>
           <ScrollAnimationWrapper>
             <motion.h3
               variants={scrollAnimation}
@@ -220,7 +219,7 @@ const Pricing = () => {
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper className='flex w-full flex-col py-12'>
             <motion.div variants={scrollAnimation}>
-              <Testimoni />
+              <Preview />
             </motion.div>
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper className='relative mt-16 w-full'>
