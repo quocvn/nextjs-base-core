@@ -174,27 +174,27 @@ const Pricing = () => {
             >
               {/* <Netflix className="w-auto h-18" /> */}
               <img
-                src='/assets/icon/template/amazon.png'
+                src='/assets/icons/template/amazon.png'
                 className='mt-4 h-14 w-auto lg:mt-2'
                 alt=''
               />
               <img
-                src='/assets/icon/template/netflix.png'
+                src='/assets/icons/template/netflix.png'
                 className='mt-2 h-14 w-auto lg:mt-0'
                 alt=''
               />
               <img
-                src='/assets/icon/template/reddit.png'
+                src='/assets/icons/template/reddit.png'
                 className='mt-2 h-12 w-auto lg:mt-0'
                 alt=''
               />
               <img
-                src='/assets/icon/template/discord.png'
+                src='/assets/icons/template/discord.png'
                 className='mt-2 h-14 w-auto lg:mt-0'
                 alt=''
               />
               <img
-                src='/assets/icon/template/spotify.png'
+                src='/assets/icons/template/spotify.png'
                 className='mt-2 h-12 w-auto lg:mt-0'
                 alt=''
               />

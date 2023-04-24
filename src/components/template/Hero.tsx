@@ -11,17 +11,17 @@ const Hero = ({
     {
       name: 'Users',
       number: '390',
-      icon: '/assets/icon/template/heroicons_sm-user.svg',
+      icon: '/assets/icons/template/heroicons_sm-user.svg',
     },
     {
       name: 'Locations',
       number: '20',
-      icon: '/assets/icon/template/gridicons_location.svg',
+      icon: '/assets/icons/template/gridicons_location.svg',
     },
     {
       name: 'Server',
       number: '50',
-      icon: '/assets/icon/template/bx_bxs-server.svg',
+      icon: '/assets/icons/template/bx_bxs-server.svg',
     },
   ],
 }) => {

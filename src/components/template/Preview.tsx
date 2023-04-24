@@ -105,7 +105,7 @@ const Preview = ({
                   <span className='ml-4 flex'>
                     <Image
                       className='h-4 w-4'
-                      src='/assets/icon/template/stars.svg'
+                      src='/assets/icons/template/stars.svg'
                       alt='star'
                       height={30}
                       width={30}
@@ -127,7 +127,7 @@ const Preview = ({
           >
             <Image
               className='h-6 w-6'
-              src='/assets/icon/template/eva_arrow-back-fill.svg'
+              src='/assets/icons/template/eva_arrow-back-fill.svg'
               alt='Back'
               height={30}
               width={30}
@@ -140,7 +140,7 @@ const Preview = ({
           >
             <Image
               className='h-6 w-6'
-              src='/assets/icon/template/eva_arrow-next-fill.svg'
+              src='/assets/icons/template/eva_arrow-next-fill.svg'
               alt='Next'
               height={30}
               width={30}

@@ -21,7 +21,7 @@ const Footer = () => {
             <div className='mx-2 flex items-center justify-center rounded-full bg-template-white-500 p-2 shadow-md'>
               <Image
                 className='h-6 w-6'
-                src='/assets/icon/template/facebook.svg'
+                src='/assets/icons/template/facebook.svg'
                 alt='facebook'
                 height={30}
                 width={30}
@@ -30,7 +30,7 @@ const Footer = () => {
             <div className='mx-2 flex items-center justify-center rounded-full bg-template-white-500 p-2 shadow-md'>
               <Image
                 className='h-6 w-6'
-                src='/assets/icon/template/twitter.svg'
+                src='/assets/icons/template/twitter.svg'
                 alt='twitter'
                 height={30}
                 width={30}
@@ -39,7 +39,7 @@ const Footer = () => {
             <div className='mx-2 flex items-center justify-center rounded-full bg-template-white-500 p-2 shadow-md'>
               <Image
                 className='h-6 w-6'
-                src='/assets/icon/template/instagram.svg'
+                src='/assets/icons/template/instagram.svg'
                 alt='instagram'
                 height={30}
                 width={30}
