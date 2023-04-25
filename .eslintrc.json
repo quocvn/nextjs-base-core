@@ -10,6 +10,7 @@
     "no-console": "warn",
     "no-alert": "warn",
     "no-unused-vars": "off",
+    "no-plusplus": "off",
     "prefer-regex-literals": "off",
     "camelcase": "off",
     "func-style": "error",
