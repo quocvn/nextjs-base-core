@@ -1,38 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center" style="font-size: 30px">Next.js 13 (Typescript) + Ant Design + Tailwind CSS + Redux Toolkit</h1>
 
-## Getting Started
+<p align="center">
+  <img src="docs/images/ant_design_example.png" alt="Ant Design Example">
+</p>
 
-First, run the development server:
+### Getting started
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Khuyến khích nên sử dụng VSCode để code (vì đã được config các extendsion, setting hỗ trợ format code và check các rule của eslint) và nên cài thêm một số extensions sau:
+
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) => Check format code
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) => Check rule code
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) => Kiểm tra lỗi chính tả
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) => Gợi ý các class của Tailwind CSS
+
+Một số thư viện sử dụng trong project:
+
+- [Ant Design](https://ant.design) => Thư viện UI
+- [Redux Toolkit](https://redux-toolkit.js.org) => Redux cải tiến so với redux core, giúp viết code redux ngắn gọn hơn
+- [Tailwind CSS](https://tailwindcss.com/) => Framework CSS
+
+### Setup
+
+```
+git clone https://github.com/quocvn/nextjs-base-core.git
+cd nextjs-base-core
+npm install or yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Run local (http://localhost:9999):
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev or yarn run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Khi run thành công
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![VSCode Setting](/docs/images/landing_page_example.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Check format code và eslint
 
-## Learn More
+Mục đích để kiểm tra format code và có lỗi eslint gì hay không?
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run check or yarn run check
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Trong source cũng đã có config cho VSCode khi nhấn `save` sẽ tự format code và fix eslint (trong khả năng của nó)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![VSCode Setting](/docs/images/setting_vscode.png)
 
-## Deploy on Vercel
+Nếu vẫn còn báo lỗi format hoặc eslint thì chạy lệnh sau để fix:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run fix or yarn run fix
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Sau khi chạy lệnh xong thường các lỗi liên quan đến format code sẽ được fix, còn eslint đôi khi sẽ không tự fix được phải tự fix bằng tay 🧑🏾‍💻. <br/>
+Lưu ý: Nếu không fix sẽ không commit code được vì trong source đã có cài package [pre-commit](https://www.npmjs.com/package/pre-commit), package này là một hook sẽ check 2 script `check:lint` và `check:format` được định nghĩa trong `package.json` nếu nó check ok mới cho commit 🎉
+
+### Cấu trúc source
+
+```
+├── public                  # Public folder
+│   └── assets
+│       └── images          # Thư mục chứa các hình ảnh
+        └── icons           # Thư mục chứa các icon
+├── src
+│   ├── components          # Thư mục chứa các components
+│   │   ├── layout          # Chứa các layout (header, footer,...)
+│   │   ├── seo             # Component SEO head cho web (thẻ title,meta, image,...)
+│   │   ├── template        # Các component sử dụng làm example (landing page) cho web // Sẽ được remove sau này
+│   │   └── ui              # Chứa các component liên quan đến UI (button, form,...)
+│   ├── constants           # Định nghĩa các biến constant
+│   ├── hooks               # Chứa các hook được sử dụng lại
+│   ├── pages               # Router của NextJS
+│   │   ├── api
+│   │   ├── _app.tsx
+│   │   ├── _document.tsx
+│   │   ├── 404.tsx         # Page 404 custom (page not found)
+│   │   ├── index.tsx       # Trang home page
+│   ├── redux               # Chứa code liên quan đến redux-toolkit (slice, reducers,...)
+│   ├── services            # Khai báo các services api của redux-toolkit
+│   ├── styles              # Chứa các file css, scss, styled-components,...
+│   ├── types               # Khai báo type cho typescript
+│   └── utils               # Định nghĩa các hàm helper
+└── .editorconfig           # File cấu hình cho editor
+└── .eslintrc.json          # File cấu hình eslint (chứa các rule của eslint, react hook, prettier,...)
+└── .prettierrc             # File cấu hình prettier (format code)
+├── next.config.js          # Next JS configuration
+├── README.md               # README file
+├── tailwind.config.js      # File cấu hình của Tailwind CSS (color, theme, font-size, plugin,...)
+└── tsconfig.json           # TypeScript configuration
+```

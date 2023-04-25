@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useMemo } from 'react'
 
 import ScrollAnimationWrapper from 'components/layout/ScrollAnimationWrapper'
-import ButtonOutline from 'components/ui/ButtonOutline'
+import ButtonOutline from 'components/ui/button/ButtonOutline'
 import ButtonPrimary from 'components/ui/button/ButtonPrimary'
 import { getScrollAnimation } from 'utils/getScrollAnimation'
 

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import { Link as LinkScroll } from 'react-scroll'
 
-import ButtonOutline from 'components/ui/ButtonOutline'
+import ButtonOutline from 'components/ui/button/ButtonOutline'
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState<string>('')
