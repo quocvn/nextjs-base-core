@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  important: true, // This is needed to some cases that Tailwind need to override Antd
+import withMT from '@material-tailwind/react/utils/withMT'
+
+export default withMT({
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
@@ -52,4 +53,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+})
