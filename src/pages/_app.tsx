@@ -1,21 +1,38 @@
 import { StyleProvider } from '@ant-design/cssinjs'
 import { ConfigProvider } from 'antd'
 import type { AppProps } from 'next/app'
-import { Provider } from 'react-redux'
+import type { Session } from 'next-auth'
+import { SessionProvider } from 'next-auth/react'
+import { Provider as ReduxProvider } from 'react-redux'
 
+import { ProtectedLayout } from 'components/layout/ProtectedLayout'
 import { store } from 'redux/store'
 import 'styles/globals.css'
 import 'styles/template.scss'
 
-const App = ({ Component, pageProps }: AppProps) => {
+type AppPropsWithAuth = AppProps<{ session: Session }> & {
+  Component: {
+    requireAuth?: boolean
+  }
+}
+
+const App = ({ Component, pageProps: { session, ...pageProps } }: AppPropsWithAuth) => {
   return (
-    <Provider store={store}>
+    <ReduxProvider store={store}>
       <ConfigProvider>
         <StyleProvider hashPriority='high'>
-          <Component {...pageProps} />
+          <SessionProvider session={session}>
+            {Component.requireAuth ? (
+              <ProtectedLayout>
+                <Component {...pageProps} />
+              </ProtectedLayout>
+            ) : (
+              <Component {...pageProps} />
+            )}
+          </SessionProvider>
         </StyleProvider>
       </ConfigProvider>
-    </Provider>
+    </ReduxProvider>
   )
 }
 
