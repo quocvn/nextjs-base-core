@@ -7,6 +7,11 @@ import GoogleProvider from 'next-auth/providers/google'
 import TwitterProvider from 'next-auth/providers/twitter'
 
 export const authOptions: AuthOptions = {
+  session: {
+    strategy: 'jwt',
+    // Seconds - How long until an idle session expires and is no longer valid.
+    maxAge: 24 * 60 * 60, // 1 day
+  },
   // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
@@ -62,24 +67,24 @@ export const authOptions: AuthOptions = {
       },
     }),
     FacebookProvider({
-      clientId: process.env.FACEBOOK_ID ?? '',
-      clientSecret: process.env.FACEBOOK_SECRET ?? '',
+      clientId: process.env.FACEBOOK_ID as string,
+      clientSecret: process.env.FACEBOOK_SECRET as string,
     }),
     GithubProvider({
-      clientId: process.env.GITHUB_ID ?? '',
-      clientSecret: process.env.GITHUB_SECRET ?? '',
+      clientId: process.env.GITHUB_ID as string,
+      clientSecret: process.env.GITHUB_SECRET as string,
     }),
     GoogleProvider({
-      clientId: process.env.GOOGLE_ID ?? '',
-      clientSecret: process.env.GOOGLE_SECRET ?? '',
+      clientId: process.env.GOOGLE_ID as string,
+      clientSecret: process.env.GOOGLE_SECRET as string,
     }),
     TwitterProvider({
-      clientId: process.env.TWITTER_ID ?? '',
-      clientSecret: process.env.TWITTER_SECRET ?? '',
+      clientId: process.env.TWITTER_ID as string,
+      clientSecret: process.env.TWITTER_SECRET as string,
     }),
     Auth0Provider({
-      clientId: process.env.AUTH0_ID ?? '',
-      clientSecret: process.env.AUTH0_SECRET ?? '',
+      clientId: process.env.AUTH0_ID as string,
+      clientSecret: process.env.AUTH0_SECRET as string,
       issuer: process.env.AUTH0_ISSUER,
     }),
   ],

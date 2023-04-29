@@ -1,16 +1,35 @@
 import { Form, Input } from 'antd'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { signIn } from 'next-auth/react'
-import React from 'react'
+import React, { useState } from 'react'
+
+import { ClapSpinner } from 'components/ui/spinners'
 
 const Login = () => {
+  const router = useRouter()
+  const [isLoading, setLoading] = useState<boolean>(false)
+
   const onSubmit = async (values: any) => {
-    await signIn('credentials', {
-      username: values.email,
-      password: values.password,
-      callbackUrl: '/',
-      // redirect: false,
-    })
+    try {
+      setLoading(true)
+      const response = await signIn('credentials', {
+        username: values.email,
+        password: values.password,
+        redirect: false,
+      })
+
+      if (response && response.ok) {
+        setTimeout(() => {
+          router.replace('/')
+          setLoading(false)
+        }, 1500)
+      }
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log('Login error: ', error)
+      setLoading(false)
+    }
   }
 
   return (
@@ -145,8 +164,14 @@ const Login = () => {
             <div className='px-4 pt-10'>
               <button
                 type='submit'
-                className='block w-full rounded-full bg-indigo-500 p-4 text-lg uppercase text-white hover:bg-indigo-600 focus:outline-none'
+                disabled={isLoading}
+                className='relative block w-full rounded-full bg-indigo-600 p-4 text-lg uppercase text-white hover:bg-indigo-700 focus:outline-none disabled:cursor-not-allowed disabled:bg-indigo-400'
               >
+                {isLoading && (
+                  <div className='absolute left-1/4 top-1/2 -translate-y-1/2'>
+                    <ClapSpinner size={20} frontColor='#fff' backColor='#fff' />
+                  </div>
+                )}
                 sign in
               </button>
             </div>
