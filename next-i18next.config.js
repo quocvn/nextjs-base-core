@@ -2,9 +2,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 module.exports = {
   i18n: {
-    defaultLocale: 'vi',
+    defaultLocale: 'en',
     locales: ['en', 'vi'],
   },
-  localePath:
-    typeof window === 'undefined' ? require('path').resolve('./public/locales') : '/locales',
 }
