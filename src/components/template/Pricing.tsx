@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
 import React, { useMemo } from 'react'
 
 import ScrollAnimationWrapper from 'components/layout/ScrollAnimationWrapper'
@@ -10,6 +11,8 @@ import { getScrollAnimation } from 'utils/getScrollAnimation'
 import Preview from './Preview'
 
 const Pricing = () => {
+  const { t } = useTranslation('common')
+
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
 
   return (
@@ -24,7 +27,7 @@ const Pricing = () => {
               variants={scrollAnimation}
               className='text-2xl font-medium leading-relaxed text-template-black-600 sm:text-3xl lg:text-4xl'
             >
-              Choose Your Plan
+              {t('Choose your plan')}
             </motion.h3>
             <motion.p
               variants={scrollAnimation}
@@ -229,7 +232,7 @@ const Pricing = () => {
                   <h5 className='text-xl font-medium leading-relaxed text-template-black-600 sm:text-2xl lg:text-3xl'>
                     Subscribe Now for <br /> Get Special Features!
                   </h5>
-                  <p>Let subscribe with us and find the fun.</p>
+                  <p>{t('Let subscribe with us and find the fun.')}</p>
                 </div>
                 <ButtonPrimary>Get Started</ButtonPrimary>
               </div>

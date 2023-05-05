@@ -3,6 +3,7 @@ import { ConfigProvider } from 'antd'
 import type { AppProps } from 'next/app'
 import type { Session } from 'next-auth'
 import { SessionProvider } from 'next-auth/react'
+import { appWithTranslation } from 'next-i18next'
 import { Provider as ReduxProvider } from 'react-redux'
 
 import { ProtectedLayout } from 'components/layout/ProtectedLayout'
@@ -36,4 +37,4 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppPropsWithAu
   )
 }
 
-export default App
+export default appWithTranslation(App)
