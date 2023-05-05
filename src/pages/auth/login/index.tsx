@@ -1,13 +1,23 @@
 import { Form, Input } from 'antd'
+import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { signIn } from 'next-auth/react'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import React, { useState } from 'react'
 
 import { ClapSpinner } from 'components/ui/spinners'
 
-const Login = () => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'en', ['login'])),
+  },
+})
+
+const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter()
+  const { t } = useTranslation('login')
   const [isLoading, setLoading] = useState<boolean>(false)
 
   const onSubmit = async (values: any) => {
@@ -43,8 +53,10 @@ const Login = () => {
       >
         <div className='absolute inset-0 z-0 bg-black opacity-60' />
         <div className='z-10 w-full px-24'>
-          <h1 className='text-left text-5xl font-bold tracking-wide'>Keep it special</h1>
-          <p className='my-4 text-3xl'>Capture your personal memory in unique way, anywhere.</p>
+          <h1 className='text-left text-5xl font-bold tracking-wide'>{t('Keep it special')}</h1>
+          <p className='my-4 text-3xl'>
+            {t('Capture your personal memory in unique way, anywhere.')}
+          </p>
         </div>
         <div className='absolute bottom-0 left-0 right-0 flex justify-center space-x-4 p-4 text-center'>
           <span>
@@ -123,7 +135,7 @@ const Login = () => {
             <Form.Item
               label={
                 <label htmlFor='email' className='text-lg font-bold text-white'>
-                  Email
+                  {t('Email')}
                 </label>
               }
               name='email'
@@ -142,7 +154,7 @@ const Login = () => {
             <Form.Item
               label={
                 <label htmlFor='password' className='text-lg font-bold text-white'>
-                  Password
+                  {t('Password')}
                 </label>
               }
               name='password'
@@ -158,7 +170,7 @@ const Login = () => {
 
             <div className='text-right'>
               <Link href='/' className='text-[15px] text-gray-400 hover:text-gray-100'>
-                Forgot your password?
+                {t('Forgot your password?')}
               </Link>
             </div>
             <div className='px-4 pt-10'>
@@ -172,7 +184,7 @@ const Login = () => {
                     <ClapSpinner size={20} frontColor='#fff' backColor='#fff' />
                   </div>
                 )}
-                sign in
+                {t('Sign in')}
               </button>
             </div>
             <div className='left-0 right-0 mt-16 flex justify-center space-x-4 p-4 text-center lg:hidden '>
