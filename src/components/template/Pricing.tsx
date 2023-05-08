@@ -27,13 +27,15 @@ const Pricing = () => {
               variants={scrollAnimation}
               className='text-2xl font-medium leading-relaxed text-template-black-600 sm:text-3xl lg:text-4xl'
             >
-              {t('Choose your plan')}
+              {t('Choose your plan', { ns: 'common' })}
             </motion.h3>
             <motion.p
               variants={scrollAnimation}
               className='mx-auto my-2 w-10/12 text-center leading-normal sm:w-7/12 lg:w-6/12'
             >
-              Let choose the package that is best for you and explore it happily and cheerfully.
+              {t(
+                'Let choose the package that is best for you and explore it happily and cheerfully.'
+              )}
             </motion.p>
           </ScrollAnimationWrapper>
           <div className='grid grid-flow-row grid-cols-1 gap-4 px-6 py-8 sm:grid-flow-col sm:grid-cols-3 sm:px-0 lg:gap-12 lg:px-6 lg:py-12'>
@@ -232,7 +234,7 @@ const Pricing = () => {
                   <h5 className='text-xl font-medium leading-relaxed text-template-black-600 sm:text-2xl lg:text-3xl'>
                     Subscribe Now for <br /> Get Special Features!
                   </h5>
-                  <p>{t('Let subscribe with us and find the fun.')}</p>
+                  <p>{t('Let subscribe with us and find the fun.', { ns: 'common' })}</p>
                 </div>
                 <ButtonPrimary>Get Started</ButtonPrimary>
               </div>

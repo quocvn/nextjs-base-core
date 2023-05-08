@@ -4,5 +4,8 @@
   "Email": "Email",
   "Password": "Mật khẩu",
   "Forgot your password?": "Quên mật khẩu?",
-  "Sign in": "Đăng nhập"
+  "Sign in": "Đăng nhập",
+  "Please input your email": "Vui lòng nhập email!",
+  "Email is invalid": "Email không hiệu lực",
+  "Please input your password!": "Vui lòng nhập mật khẩu!"
 }

@@ -13,6 +13,7 @@ module.exports = {
     },
     trans: false,
     lngs: ['en', 'vi'],
+    ns: ['common', 'login'],
     defaultLng: 'en',
     defaultNs: 'common',
     defaultValue(lng, ns, key) {
