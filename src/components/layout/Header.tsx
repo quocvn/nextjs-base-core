@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { signOut } from 'next-auth/react'
 import React, { useState, useEffect } from 'react'
 import { Link as LinkScroll } from 'react-scroll'
 
@@ -103,18 +104,13 @@ const Header = () => {
             </LinkScroll>
           </ul>
           <div className='col-start-10 col-end-12 flex items-center justify-end font-medium'>
-            {/* <Link href='/'>
-              <a className='mx-2 tracking-wide capitalize transition-all text-template-black-600 sm:mx-4 hover:text-template-orange-500'>
-                Sign In
-              </a>
-            </Link> */}
             <Link
-              href='/'
+              href='/auth/login'
               className='mx-2 capitalize tracking-wide text-template-black-600 transition-all hover:text-template-orange-500 sm:mx-4'
             >
               Sign In
             </Link>
-            <ButtonOutline>Sign Up</ButtonOutline>
+            <ButtonOutline onClick={() => signOut()}>Sign Out</ButtonOutline>
           </div>
         </nav>
       </header>

@@ -1,4 +1,4 @@
-import { Form, Input } from 'antd'
+import { Form, Input, Select, Space } from 'antd'
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -8,6 +8,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import React, { useState } from 'react'
 
 import { ClapSpinner } from 'components/ui/spinners'
+
+const { Option } = Select
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
@@ -40,6 +42,12 @@ const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
       console.log('Login error: ', error)
       setLoading(false)
     }
+  }
+
+  const handleChangeLanguage = (value: string) => {
+    router.replace(router.pathname, undefined, {
+      locale: value,
+    })
   }
 
   return (
@@ -108,6 +116,32 @@ const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
           }}
         >
           <div className='absolute inset-0 z-0 bg-black opacity-60' />
+        </div>
+        <div className='absolute right-10 top-10 z-[25]'>
+          <Select
+            showArrow={false}
+            defaultValue={router.locale}
+            className='w-[135px] text-left'
+            optionLabelProp='children'
+            onChange={handleChangeLanguage}
+          >
+            <Option value='en' label='English'>
+              <Space>
+                <span role='img' aria-label='English'>
+                  🇺🇸
+                </span>
+                English
+              </Space>
+            </Option>
+            <Option value='vi' label='Vietnamese'>
+              <Space>
+                <span role='img' aria-label='Vietnamese'>
+                  🇻🇳
+                </span>
+                Vietnamese
+              </Space>
+            </Option>
+          </Select>
         </div>
         <div className='z-20 w-full py-6'>
           <h1 className='my-6'>
