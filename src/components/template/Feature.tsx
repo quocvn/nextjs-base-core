@@ -1,19 +1,21 @@
 import { motion } from 'framer-motion'
 import Image from 'next/legacy/image'
+import { useTranslation } from 'next-i18next'
 import React, { useMemo } from 'react'
 
 import ScrollAnimationWrapper from 'components/layout/ScrollAnimationWrapper'
 import { getScrollAnimation } from 'utils/getScrollAnimation'
 
-const features = [
-  'Powerfull online protection.',
-  'Internet without borders.',
-  'Supercharged VPN',
-  'No specific time limits.',
-]
-
 const Feature = () => {
+  const { t } = useTranslation('common')
   const scrollAnimation = useMemo(() => getScrollAnimation(), [])
+
+  const features = [
+    t('Powerfull online protection.'),
+    t('Internet without borders.'),
+    t('Supercharged VPN'),
+    t('No specific time limits.'),
+  ]
 
   return (
     <div className='container mx-auto mb-6 mt-8 px-8 sm:mb-14 sm:mt-14 xl:px-16' id='feature'>
@@ -36,11 +38,12 @@ const Feature = () => {
             variants={scrollAnimation}
           >
             <h3 className='text-3xl font-medium leading-relaxed text-template-black-600 lg:text-4xl'>
-              We Provide Many Features You Can Use
+              {t('We Provide Many Features You Can Use')}
             </h3>
             <p className='my-2 text-template-black-500'>
-              You can explore the features that we provide with fun and have their own functions
-              each feature.
+              {t(
+                'You can explore the features that we provide with fun and have their own functions each feature.'
+              )}
             </p>
             <ul className='ml-8 list-inside self-start text-template-black-500'>
               {features.map((feature, index) => (

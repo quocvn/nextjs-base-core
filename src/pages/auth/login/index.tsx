@@ -1,4 +1,4 @@
-import { Form, Input } from 'antd'
+import { Form, Input, Select, Space } from 'antd'
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -8,6 +8,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import React, { useState } from 'react'
 
 import { ClapSpinner } from 'components/ui/spinners'
+
+const { Option } = Select
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
@@ -42,6 +44,12 @@ const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     }
   }
 
+  const handleChangeLanguage = (value: string) => {
+    router.replace(router.pathname, undefined, {
+      locale: value,
+    })
+  }
+
   return (
     <section className='flex min-h-screen items-stretch text-white '>
       <div
@@ -53,9 +61,11 @@ const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
       >
         <div className='absolute inset-0 z-0 bg-black opacity-60' />
         <div className='z-10 w-full px-24'>
-          <h1 className='text-left text-5xl font-bold tracking-wide'>{t('Keep it special')}</h1>
+          <h1 className='text-left text-5xl font-bold tracking-wide'>
+            {t('Keep it special', { ns: 'login' })}
+          </h1>
           <p className='my-4 text-3xl'>
-            {t('Capture your personal memory in unique way, anywhere.')}
+            {t('Capture your personal memory in unique way, anywhere.', { ns: 'login' })}
           </p>
         </div>
         <div className='absolute bottom-0 left-0 right-0 flex justify-center space-x-4 p-4 text-center'>
@@ -107,6 +117,32 @@ const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
         >
           <div className='absolute inset-0 z-0 bg-black opacity-60' />
         </div>
+        <div className='absolute right-10 top-10 z-[25]'>
+          <Select
+            showArrow={false}
+            defaultValue={router.locale}
+            className='w-[135px] text-left'
+            optionLabelProp='children'
+            onChange={handleChangeLanguage}
+          >
+            <Option value='en' label='English'>
+              <Space>
+                <span role='img' aria-label='English'>
+                  🇺🇸
+                </span>
+                English
+              </Space>
+            </Option>
+            <Option value='vi' label='Vietnamese'>
+              <Space>
+                <span role='img' aria-label='Vietnamese'>
+                  🇻🇳
+                </span>
+                Vietnamese
+              </Space>
+            </Option>
+          </Select>
+        </div>
         <div className='z-20 w-full py-6'>
           <h1 className='my-6'>
             <svg viewBox='0 0 247 31' className='inline-flex h-7 w-auto sm:h-8'>
@@ -135,14 +171,14 @@ const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
             <Form.Item
               label={
                 <label htmlFor='email' className='text-lg font-bold text-white'>
-                  {t('Email')}
+                  {t('Email', { ns: 'login' })}
                 </label>
               }
               name='email'
               required={false}
               rules={[
-                { required: true, message: 'Please input your email' },
-                { type: 'email', message: 'Email is invalid' },
+                { required: true, message: `${t('Please input your email', { ns: 'login' })}` },
+                { type: 'email', message: `${t('Email is invalid', { ns: 'login' })}` },
               ]}
             >
               <Input
@@ -154,12 +190,14 @@ const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
             <Form.Item
               label={
                 <label htmlFor='password' className='text-lg font-bold text-white'>
-                  {t('Password')}
+                  {t('Password', { ns: 'login' })}
                 </label>
               }
               name='password'
               required={false}
-              rules={[{ required: true, message: 'Please input your password!' }]}
+              rules={[
+                { required: true, message: `${t('Please input your password!', { ns: 'login' })}` },
+              ]}
             >
               <Input
                 id='password'
@@ -170,7 +208,7 @@ const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
             <div className='text-right'>
               <Link href='/' className='text-[15px] text-gray-400 hover:text-gray-100'>
-                {t('Forgot your password?')}
+                {t('Forgot your password?', { ns: 'login' })}
               </Link>
             </div>
             <div className='px-4 pt-10'>
@@ -184,7 +222,7 @@ const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     <ClapSpinner size={20} frontColor='#fff' backColor='#fff' />
                   </div>
                 )}
-                {t('Sign in')}
+                {t('Sign in', { ns: 'login' })}
               </button>
             </div>
             <div className='left-0 right-0 mt-16 flex justify-center space-x-4 p-4 text-center lg:hidden '>

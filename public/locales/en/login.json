@@ -4,5 +4,8 @@
   "Email": "Email",
   "Password": "Password",
   "Forgot your password?": "Forgot your password?",
-  "Sign in": "Sign in"
+  "Sign in": "Sign in",
+  "Please input your email": "Please input your email",
+  "Email is invalid": "Email is invalid",
+  "Please input your password!": "Please input your password!"
 }
