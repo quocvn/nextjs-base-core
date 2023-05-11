@@ -38,6 +38,21 @@ module.exports = {
           },
         },
       },
+      keyframes: {
+        fadeInDown: {
+          '0%': {
+            opacity: 0,
+            transform: 'translate3d(0, -100%, 0)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateZ(0)',
+          },
+        },
+      },
+      animation: {
+        fadeInDown: '300ms ease-in-out 0s normal none 1 running fadeInDown',
+      },
     },
     boxShadow: {
       sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
