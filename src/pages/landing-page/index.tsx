@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd'
+import { Col, Radio, Row } from 'antd'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
@@ -8,6 +8,7 @@ const LandingPageExample = () => {
   const handleScroll = () => {
     setScrollActive(window.scrollY > 150)
   }
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => {
@@ -206,6 +207,183 @@ const LandingPageExample = () => {
               src='https://preview.colorlib.com/theme/calvino/assets/img/gallery/shape-2.png'
               alt=''
             />
+          </div>
+        </section>
+        <section>
+          <Row className='container mx-auto px-20'>
+            <Col xs={12}>
+              <img
+                className='w-3/4'
+                src='https://preview.colorlib.com/theme/calvino/assets/img/gallery/about1.png.webp'
+                alt=''
+              />
+            </Col>
+            <Col xs={9}>
+              <div className='mb-[25px]'>
+                <span className='text-[13px] uppercase text-[#ff4495]'>About Us</span>
+                <h2 className='mb-[12px] mt-4 text-[36px] font-bold'>
+                  We Create a Steps to Build a Successful Digital Product
+                </h2>
+                <p className='mb-[15px] text-lg text-[#656565]'>
+                  With over 50 years of combined experience, our mission is to design with your
+                  values and vision in mind. We’re out to create purposeful spaces that balance art
+                  and creativity with science and strategy.
+                </p>
+                <p className='mb-10 mt-[10px] text-lg text-[#656565]'>
+                  We’re out to create purposeful spaces that balance art and creativity with science
+                  and strategy.
+                </p>
+              </div>
+              <Link
+                className='relative font-semibold text-[#192839] transition-all duration-[0.3s] ease-out before:absolute before:-bottom-[11px] before:h-[2px] before:w-full before:bg-[#ff4495] before:content-[""] hover:tracking-[1px]'
+                href='/'
+              >
+                Explore More
+              </Link>
+            </Col>
+          </Row>
+        </section>
+        <section className='relative py-28'>
+          <div className='container mx-auto text-center'>
+            <div className='mx-20 bg-[#f8fbfe] pt-[70px]'>
+              <span className='text-[13px] uppercase text-[#ff4495]'>Pricing Plan</span>
+              <h2 className='mb-[12px] mt-4 text-[36px] font-bold'>
+                Choose Your Best Pricing Plan
+              </h2>
+              <Radio.Group className='bg-white' defaultValue='Yearly' buttonStyle='solid'>
+                <Radio.Button value='Yearly' className='rounded-l-[20px] uppercase'>
+                  Yearly
+                </Radio.Button>
+                <Radio.Button value='Monthly' className='rounded-r-[20px] uppercase'>
+                  Monthly
+                </Radio.Button>
+              </Radio.Group>
+              <Row className='mt-[40px] px-[15px]'>
+                <Col xs={8}>
+                  <div className='single-card group mx-3 mb-[30px] px-[40px] py-[35px] text-center transition-all duration-[0.4s] ease-out hover:rounded-[15px] hover:bg-white hover:shadow-md'>
+                    <div className='card-top flex flex-col items-center justify-center'>
+                      <div className='cat-icon flex h-[78px] w-[78px] justify-center rounded-[50px] text-center leading-[78px] text-[#ff4495] shadow-lg'>
+                        <img
+                          src='https://preview.colorlib.com/theme/calvino/assets/img/icon/price1.svg'
+                          alt=''
+                        />
+                      </div>
+                      <span className='mb-[19px] mt-[13px] rounded-[20px] text-[#ff4495]'>
+                        Basic
+                      </span>
+                    </div>
+                    <div className='card-mid mb-[8px]'>
+                      <h4 className='mb-[20px] text-[30px] font-bold text-[#192839]'>$ 05.00</h4>
+                    </div>
+                    <div className='card-bottom'>
+                      <ul>
+                        <li className='mb-[10px] text-[18px] font-extralight text-[#192839]'>
+                          Increase traffic 50%
+                        </li>
+                        <li className='mb-[10px] text-[18px] font-extralight text-[#192839]'>
+                          Social Media Marketing
+                        </li>
+                        <li className='mb-[10px] text-[18px] font-extralight text-[#192839]'>
+                          10 Free Optimization
+                        </li>
+                        <li className='mb-[10px] text-[18px] font-extralight text-[#192839]'>
+                          {' '}
+                          24/7 support
+                        </li>
+                      </ul>
+                      <button
+                        type='button'
+                        className='mt-[30px] rounded-[40px] bg-gradient-to-b from-[#ff4495] from-0% via-[#ff6d6d] via-100% to-[#7db9e8] to-100% px-[23px] py-[11px] text-lg font-medium text-white transition-all duration-500 ease-out group-hover:border-[1px] group-hover:border-[#ff4495] group-hover:bg-none group-hover:text-[#ff4495]'
+                      >
+                        Get Started
+                      </button>
+                    </div>
+                  </div>
+                </Col>
+                <Col xs={8}>
+                  <div className='single-card group mx-3 mb-[30px] px-[40px] py-[35px] text-center transition-all duration-[0.4s] ease-out hover:rounded-[15px] hover:bg-white hover:shadow-md'>
+                    <div className='card-top flex flex-col items-center justify-center'>
+                      <div className='cat-icon flex h-[78px] w-[78px] justify-center rounded-[50px] text-center leading-[78px] text-[#ff4495] shadow-lg'>
+                        <img
+                          src='https://preview.colorlib.com/theme/calvino/assets/img/icon/price2.svg'
+                          alt=''
+                        />
+                      </div>
+                      <span className='mb-[19px] mt-[13px] rounded-[20px] text-[#ff4495]'>
+                        Basic
+                      </span>
+                    </div>
+                    <div className='card-mid mb-[8px]'>
+                      <h4 className='mb-[20px] text-[30px] font-bold text-[#192839]'>$ 05.00</h4>
+                    </div>
+                    <div className='card-bottom'>
+                      <ul>
+                        <li className='mb-[10px] text-[18px] font-extralight text-[#192839]'>
+                          Increase traffic 50%
+                        </li>
+                        <li className='mb-[10px] text-[18px] font-extralight text-[#192839]'>
+                          Social Media Marketing
+                        </li>
+                        <li className='mb-[10px] text-[18px] font-extralight text-[#192839]'>
+                          10 Free Optimization
+                        </li>
+                        <li className='mb-[10px] text-[18px] font-extralight text-[#192839]'>
+                          {' '}
+                          24/7 support
+                        </li>
+                      </ul>
+                      <button
+                        type='button'
+                        className='mt-[30px] rounded-[40px] bg-gradient-to-b from-[#ff4495] from-0% via-[#ff6d6d] via-100% to-[#7db9e8] to-100% px-[23px] py-[11px] text-lg font-medium text-white transition-all duration-500 ease-out group-hover:border-[1px] group-hover:border-[#ff4495] group-hover:bg-none group-hover:text-[#ff4495]'
+                      >
+                        Get Started
+                      </button>
+                    </div>
+                  </div>
+                </Col>
+                <Col xs={8}>
+                  <div className='single-card group mx-3 mb-[30px] px-[40px] py-[35px] text-center transition-all duration-[0.4s] ease-out hover:rounded-[15px] hover:bg-white hover:shadow-md'>
+                    <div className='card-top flex flex-col items-center justify-center'>
+                      <div className='cat-icon flex h-[78px] w-[78px] justify-center rounded-[50px] text-center leading-[78px] text-[#ff4495] shadow-lg'>
+                        <img
+                          src='https://preview.colorlib.com/theme/calvino/assets/img/icon/price3.svg'
+                          alt=''
+                        />
+                      </div>
+                      <span className='mb-[19px] mt-[13px] rounded-[20px] text-[#ff4495]'>
+                        Basic
+                      </span>
+                    </div>
+                    <div className='card-mid mb-[8px]'>
+                      <h4 className='mb-[20px] text-[30px] font-bold text-[#192839]'>$ 05.00</h4>
+                    </div>
+                    <div className='card-bottom'>
+                      <ul>
+                        <li className='mb-[10px] text-[18px] font-extralight text-[#192839]'>
+                          Increase traffic 50%
+                        </li>
+                        <li className='mb-[10px] text-[18px] font-extralight text-[#192839]'>
+                          Social Media Marketing
+                        </li>
+                        <li className='mb-[10px] text-[18px] font-extralight text-[#192839]'>
+                          10 Free Optimization
+                        </li>
+                        <li className='mb-[10px] text-[18px] font-extralight text-[#192839]'>
+                          {' '}
+                          24/7 support
+                        </li>
+                      </ul>
+                      <button
+                        type='button'
+                        className='mt-[30px] rounded-[40px] bg-gradient-to-b from-[#ff4495] from-0% via-[#ff6d6d] via-100% to-[#7db9e8] to-100% px-[23px] py-[11px] text-lg font-medium text-white transition-all duration-500 ease-out group-hover:border-[1px] group-hover:border-[#ff4495] group-hover:bg-none group-hover:text-[#ff4495]'
+                      >
+                        Get Started
+                      </button>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </div>
           </div>
         </section>
       </main>
