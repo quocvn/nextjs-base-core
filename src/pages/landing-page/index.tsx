@@ -1,4 +1,5 @@
-import { Col, Radio, Row } from 'antd'
+import { Carousel, Col, Radio, Row } from 'antd'
+import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
@@ -384,6 +385,82 @@ const LandingPageExample = () => {
                 </Col>
               </Row>
             </div>
+          </div>
+        </section>
+        <section className='pb-28'>
+          <div className='container mx-auto px-20'>
+            <div className='text-center'>
+              <span className='text-[13px] uppercase text-[#ff4495]'>Case Study</span>
+              <h2 className='mb-[12px] mt-4 text-[36px] font-bold'>Some Of Our Awesome Stuffs</h2>
+            </div>
+
+            <Carousel
+              slidesToShow={3}
+              slidesToScroll={1}
+              infinite
+              speed={500}
+              autoplay
+              arrows={false}
+              dots={false}
+              className='mt-[60px] flex items-center justify-center'
+            >
+              {Array.from({ length: 4 }).map((_, index: number) => {
+                return (
+                  <div className='relative px-3' key={index}>
+                    <Image
+                      className='h-[350px] w-[450px]'
+                      src={`https://preview.colorlib.com/theme/calvino/assets/img/gallery/stuffs${
+                        index + 1 === 4 ? 2 : index + 1
+                      }.jpg.webp`}
+                      alt=''
+                      height={250}
+                      width={250}
+                    />
+                    <div className='absolute bottom-10 left-10'>
+                      <p className='mb-[15px] text-white'>Marketing</p>
+                      <h3 className='text-[22px] font-bold text-white'>
+                        Discover, Explore
+                        <br /> the Product
+                      </h3>
+                    </div>
+                  </div>
+                )
+              })}
+            </Carousel>
+
+            <Carousel
+              slidesToShow={1}
+              slidesToScroll={1}
+              infinite
+              speed={800}
+              autoplay
+              autoplaySpeed={3500}
+              arrows={false}
+              dots={false}
+              cssEase='linear'
+              className='mt-[80px]'
+            >
+              {Array.from({ length: 3 }).map((_, index: number) => {
+                return (
+                  <div className='testimonial-caption text-center' key={index}>
+                    <div className='testimonial-top-cap mx-auto flex max-w-[55rem] flex-col items-center justify-center text-center'>
+                      <img
+                        src='https://preview.colorlib.com/theme/calvino/assets/img/gallery/t-woner.png.webp'
+                        alt=''
+                      />
+                      <p className='mt-[50px] px-[26px] text-[25px] font-light text-[#232f55]'>
+                        Even the all-powerful Pointing has no control about the blind texts it is an
+                        almost un real orthographic eaque ipsa quae elit small batch freegan sed.
+                        Craft beer elit seitan exercitation
+                      </p>
+                    </div>
+                    <p className='mt-[30px] text-[18px] font-normal text-[#192839]'>
+                      - Robert . Creative Director at Colorlib
+                    </p>
+                  </div>
+                )
+              })}
+            </Carousel>
           </div>
         </section>
       </main>
